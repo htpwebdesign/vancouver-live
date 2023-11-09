@@ -170,6 +170,10 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Load custom post types and taxonomies
+ */
+require get_template_directory() . '/inc/cpt-taxonomies.php';
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
