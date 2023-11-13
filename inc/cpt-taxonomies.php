@@ -15,7 +15,7 @@ function vli_register_cpts() {
         'labels' => $labels,
         'public' => true,
         'has_archive' => true,
-        'rewrite' => array('slug' => 'our-vendors'),
+        'rewrite' => array('slug' => 'vendors'),
         'supports' => array('title', 'thumbnail', 'archive'),
         // Add other arguments as needed.
     );
@@ -35,7 +35,7 @@ function vli_register_cpts() {
         'labels' => $labels,
         'public' => true,
         'has_archive' => true,
-        'rewrite' => array('slug' => 'our-performers'),
+        'rewrite' => array('slug' => 'performers'),
         'supports' => array('title', 'thumbnail', 'archive'),
         // Add other arguments as needed.
     );
