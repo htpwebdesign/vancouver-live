@@ -15,24 +15,72 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+    <?php
+    $args = array(
+        'posts_per_page' => -1,
+        'post_type'      => 'vanlive-performer',
+        'meta_key'       => 'timeslot',
+        'orderby'        => array(
+            'meta_value' => 'DESC',
+            'day'        => 'ASC',
+        ),
+        'tax_query'      => array(
+            array(
+                'taxonomy' => 'day',
+                'field'    => 'slug',
+                'terms'    => array('day-1', 'day-2'),
+            ),
+        ),
+    );
 
-			get_template_part( 'template-parts/content', 'page' );
+    $query = new WP_Query($args);
+    ?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+    <?php if ($query->have_posts()) : ?>
+        <?php
+        // Initialize day as emptry string to track the current day
+        $current_day = '';
+        ?>
 
-		endwhile; // End of the loop.
-		?>
+        <?php while ($query->have_posts()) : $query->the_post(); ?>
+            <?php
+            $day_terms = wp_get_post_terms(get_the_ID(), 'day', array('fields' => 'names'));
+			//if array is not empty, assign day to current query else assign empty string
+            $current_post_day = !empty($day_terms) ? $day_terms[0] : '';
 
-	</main><!-- #main -->
+            //check if current performer is performing on the queried day
+            if ($current_post_day !== $current_day) {
+
+                // Close the previous list if not the first iteration
+                if ($current_day !== '') {
+                    echo '</ul>';
+                }
+              
+				//if day is empty start output new title
+                echo '<h2>' . esc_html($current_post_day) . '</h2>';
+                // Start a new list
+                echo '<ul>';
+                // Update the current day
+                $current_day = $current_post_day;
+            }
+            ?>
+            <li id="<?php the_ID();?>">
+                <?php the_title(); ?>
+                <?php $selected_option = get_field('timeslot'); ?>
+                <?php echo esc_html($selected_option); ?>
+                <?php echo esc_html(implode(', ', $day_terms)); ?>
+            </li>
+        <?php endwhile; ?>
+        <?php
+        echo '</ul>';
+        ?>
+    <?php endif; ?>
+
+</main><!-- #main -->
 
 <?php
 get_sidebar();
 get_footer();
+?>
