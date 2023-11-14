@@ -148,7 +148,7 @@ function vancouver_live_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'vancouver_live_scripts' );
-
+add_image_size( 'logo', 75, 75);
 /**
  * Implement the Custom Header feature.
  */
