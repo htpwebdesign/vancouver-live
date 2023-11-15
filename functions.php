@@ -186,3 +186,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+function custom_archive_title($title) {
+	if (is_post_type_archive(array('vanlive-performer', 'vanlive-vendor'))) {
+		$title = post_type_archive_title('', false);
+	}
+	return $title;
+}
+add_filter('get_the_archive_title', 'custom_archive_title');
+

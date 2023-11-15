@@ -68,6 +68,7 @@ function vli_register_taxonomies() {
         'show_admin_column' => true,
         'query_var' => true,
         'rewrite' => ['slug' => 'day'],
+        'terms' => array('day 1', 'day 2'),
     );
 
     register_taxonomy('day', 'vanlive-performer', $args);
