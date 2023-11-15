@@ -22,20 +22,39 @@ get_header();
 			</header><!-- .page-header -->
 
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-				
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
 
-			endwhile;
+			$performer_acfstatus = 'performer_status';
 
-			the_posts_navigation();
+			$performer_tiers = array('headliner', 'secondary', 'tertiary');
+
+			foreach($performer_tiers as $tier){
+				$args = array(
+					'post_type'			=> 'vanlive-performer',
+					'posts_per_page'	=> -1,
+					'meta_query'		=> array(
+						array(
+							'key'	=> $performer_acfstatus,
+							'value'	=> $tier,
+						),
+					),
+				);
+
+				$query = new WP_Query($args);
+				echo '<div class="' . esc_html($tier) . '">';
+					echo '<h2>' . esc_html($tier) . '</h2>';
+					echo '<ul>';
+					/* Start the Loop */
+					if($query -> have_posts()) {
+
+						while ($query -> have_posts()) : $query->the_post();
+							get_template_part('template-parts/content', get_post_type());
+						endwhile;
+					}
+					echo '</ul>';
+				echo '</div>';
+				wp_reset_postdata();
+			}
+				the_posts_navigation();
 
 		else :
 
