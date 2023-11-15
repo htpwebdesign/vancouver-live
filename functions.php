@@ -149,6 +149,8 @@ function vancouver_live_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'vancouver_live_scripts' );
 add_image_size( 'logo', 75, 75);
+gravity_form_enqueue_scripts( 1, true );
+gravity_form_enqueue_scripts( 2, true );
 /**
  * Implement the Custom Header feature.
  */

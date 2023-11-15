@@ -62,8 +62,8 @@ get_header();
 		get_template_part( 'template-parts/content', 'none' );
 
 		endif;
+		gravity_form( 2, false, false, false, false, true ); 
 		?>
-
 	</main><!-- #main -->
 
 <?php
