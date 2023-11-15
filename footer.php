@@ -51,7 +51,12 @@
 			</div>
 		
 		</div><!-- .site-info -->
-		<?php } ?>
+		<?php 
+	}
+	else {
+		gravity_form( 2, false, false, false, false, true ); 
+	}
+	?>
 		<div class="site-social-media">
 			<div>
 				<h3>Subscribe to our newsletter!</h3>
