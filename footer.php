@@ -47,13 +47,16 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 				</p>
-				<a href="<?php echo get_site_url(); ?>/vendors">Become a vendor today!</a>
+				<a href="<?php echo get_site_url(); ?>/vendors#gform_wrapper_2">Become a vendor today!</a>
 			</div>
 		
 		</div><!-- .site-info -->
 		<?php 
 	}
 	else {
+		?>
+		<h3>Sign up to be a vendor here!</h3>
+		<?php
 		gravity_form( 2, false, false, false, false, true ); 
 	}
 	?>
