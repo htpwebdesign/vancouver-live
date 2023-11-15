@@ -17,66 +17,54 @@ get_header();
 
 <main id="primary" class="site-main">
 
-    <?php
+<?php
+
+$terms = get_terms('day', array('hide_empty' => false));
+
+foreach ($terms as $term) {
     $args = array(
         'posts_per_page' => -1,
         'post_type'      => 'vanlive-performer',
-        'meta_key'       => 'timeslot',
-        'orderby'        => array(
-            'meta_value' => 'DESC',
-            'day'        => 'ASC',
-        ),
         'tax_query'      => array(
             array(
                 'taxonomy' => 'day',
                 'field'    => 'slug',
-                'terms'    => array('day-1', 'day-2'),
+                'terms'    => $term->slug,
             ),
         ),
+        'meta_key'       => 'timeslot',
+        'orderby'        => 'meta_value',
+            'order'     => 'DESC',
     );
 
     $query = new WP_Query($args);
-    ?>
 
-    <?php if ($query->have_posts()) : ?>
-        <?php
-        // Initialize day as emptry string to track the current day
-        $current_day = '';
-        ?>
+    echo '<h2>' . esc_html($term->name) . '</h2>';
 
-        <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <?php
-            $day_terms = wp_get_post_terms(get_the_ID(), 'day', array('fields' => 'names'));
-			//if array is not empty, assign day to current query else assign empty string
-            $current_post_day = !empty($day_terms) ? $day_terms[0] : '';
+    // Check if there are posts for the current term
+    if ($query->have_posts()) {
+        // Start a new list
+        echo '<ul>';
 
-            //check if current performer is performing on the queried day
-            if ($current_post_day !== $current_day) {
-
-                // Close the previous list if not the first iteration
-                if ($current_day !== '') {
-                    echo '</ul>';
-                }
-              
-				//if day is empty start output new title
-                echo '<h2>' . esc_html($current_post_day) . '</h2>';
-                // Start a new list
-                echo '<ul>';
-                // Update the current day
-                $current_day = $current_post_day;
-            }
+        // Loop through the posts for the current term
+        while ($query->have_posts()) : $query->the_post();
             ?>
-            <li id="<?php the_ID();?>">
-                <?php the_title(); ?>
+            <li id="<?php the_ID(); ?>">
+                <?php echo '<a href="' . esc_url( get_permalink() ) . '">' . get_the_title() . '</a>'; ?>
                 <?php $selected_option = get_field('timeslot'); ?>
                 <?php echo esc_html($selected_option); ?>
-                <?php echo esc_html(implode(', ', $day_terms)); ?>
             </li>
-        <?php endwhile; ?>
-        <?php
+            <?php
+        endwhile;
+
+        // Close the list
         echo '</ul>';
-        ?>
-    <?php endif; ?>
+    }
+
+    // Reset the query
+    wp_reset_postdata();
+}
+?>
 
 </main><!-- #main -->
 
