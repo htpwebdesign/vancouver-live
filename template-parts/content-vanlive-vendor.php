@@ -20,11 +20,9 @@
     </header>
 
     <div class="entry-content">
-        <?php 
-        
+        <?php  
+        the_post_thumbnail();   
         the_content();
-        
-
         ?>
     </div>
 </article>
