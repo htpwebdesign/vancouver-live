@@ -16,7 +16,7 @@ function vli_register_cpts() {
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'vendors'),
-        'supports' => array('title', 'thumbnail', 'archive'),
+        'supports' => array('title', 'thumbnail'),
         // Add other arguments as needed.
     );
 
@@ -36,7 +36,7 @@ function vli_register_cpts() {
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'performers'),
-        'supports' => array('title', 'thumbnail', 'archive'),
+        'supports' => array('title', 'thumbnail'),
         // Add other arguments as needed.
     );
 
@@ -71,7 +71,7 @@ function vli_register_taxonomies() {
         'terms' => array('day 1', 'day 2'),
     );
 
-    register_taxonomy('day', 'vanlive-performer', $args);
+    register_taxonomy('vli-day', 'vanlive-performer', $args);
 
 
 }
