@@ -41,9 +41,8 @@ get_header();
 			);
 
 			$query = new WP_Query($args);
-			echo '<div class="' . esc_html($tier) . '">';
+			echo '<section class="' . esc_html($tier) . '">';
 				echo '<h2>' . esc_html($tier) . '</h2>';
-				echo '<ul>';
 				/* Start the Loop */
 				if($query -> have_posts()) {
 
@@ -51,8 +50,7 @@ get_header();
 						get_template_part('template-parts/content', get_post_type());
 					endwhile;
 				}
-				echo '</ul>';
-			echo '</div>';
+			echo '</section>';
 			wp_reset_postdata();
 		}
 			the_posts_navigation();

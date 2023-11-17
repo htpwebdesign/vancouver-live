@@ -19,7 +19,9 @@ get_header();
 
 <?php
 
-$terms = get_terms('day', array('hide_empty' => false));
+if(function_exists('get_terms')){
+    $terms = get_terms('vli-day', array('hide_empty' => false));
+};
 
 foreach ($terms as $term) {
     $args = array(
@@ -27,7 +29,7 @@ foreach ($terms as $term) {
         'post_type'      => 'vanlive-performer',
         'tax_query'      => array(
             array(
-                'taxonomy' => 'day',
+                'taxonomy' => 'vli-day',
                 'field'    => 'slug',
                 'terms'    => $term->slug,
             ),
@@ -44,6 +46,7 @@ foreach ($terms as $term) {
     // Check if there are posts for the current term
     if ($query->have_posts()) {
         // Start a new list
+        echo '<section>';
         echo '<ul>';
 
         // Loop through the posts for the current term
@@ -51,7 +54,11 @@ foreach ($terms as $term) {
             ?>
             <li id="<?php the_ID(); ?>">
                 <?php echo '<a href="' . esc_url( get_permalink() ) . '">' . get_the_title() . '</a>'; ?>
-                <?php $selected_option = get_field('timeslot'); ?>
+                <?php
+                if(function_exists('get_field')){
+                 $selected_option = get_field('timeslot');   
+                }
+                ?>
                 <?php echo esc_html($selected_option); ?>
             </li>
             <?php
@@ -59,6 +66,7 @@ foreach ($terms as $term) {
 
         // Close the list
         echo '</ul>';
+        echo '</section>';
     }
 
     // Reset the query

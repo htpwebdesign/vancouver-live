@@ -23,12 +23,13 @@
     <div class="entry-content">
         <?php   
         the_post_thumbnail();
-
-        $about_artist = get_field('about_artist');
-        if($about_artist){
-            echo '<div>';
-            echo '<p>' . esc_html($about_artist) . '</p>';
-            echo '</div>';
+        if(function_exists ('get_field')){
+            $about_artist = get_field('about_artist');
+            if($about_artist){
+                echo '<div>';
+                echo '<p>' . esc_html($about_artist) . '</p>';
+                echo '</div>';
+            }
         }
         ?>
     </div>
