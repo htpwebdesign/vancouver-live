@@ -13,71 +13,79 @@
 
 	<footer id="colophon" class="site-footer">
 	<?php
-	if ( ! is_post_type_archive('vanlive-vendor') ) {?>
-		<div class="site-info">
-			<div>
-				<h3>Our Partners</h2>
-				<?php
-				$args = array(
-						'post_type'      => 'vanlive-vendor',
-						'posts_per_page' => -1,
-						'meta_query'		=> array(
-							array(
-								'key'	=> 'vendor_tier',
-								'value'	=> 'tier 1',
+	if(function_exists ('get_field')) {
+		if ( ! is_post_type_archive('vanlive-vendor') ) {?>
+			<section class="site-vendor-showcase">
+				<section>
+					<h3><?php the_field('vendor_showcase_heading', 'option'); ?></h2>
+					<?php
+					$args = array(
+							'post_type'      => 'vanlive-vendor',
+							'posts_per_page' => -1,
+							'meta_query'		=> array(
+								array(
+									'key'	=> 'vendor_tier',
+									'value'	=> 'tier 1',
+								),
 							),
-						),
-					);
-				$query = new WP_Query( $args );
-				if ( $query->have_posts() ) {
-					while ( $query->have_posts() ) {
-						$query->the_post();
-						?>
-							<a href="<?php the_permalink(); ?>">
-								<?php the_post_thumbnail( 'logo' ); ?>
-							</a>
-						<?php 
+						);
+					$query = new WP_Query( $args );
+					if ( $query->have_posts() ) {
+						while ( $query->have_posts() ) {
+							$query->the_post();
+							?>
+								<a href="<?php the_permalink(); ?>">
+									<?php the_post_thumbnail( 'logo' ); ?>
+								</a>
+							<?php 
+						}
+						wp_reset_postdata();
 					}
-					wp_reset_postdata();
-				}
-				?>
-			</div>
-			<div>
-				<h3>Want to become a vendor? Sign up here!</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-				</p>
-				<a href="<?php echo get_site_url(); ?>/vendors#gform_wrapper_2">Become a vendor today!</a>
-			</div>
-		
-		</div><!-- .site-info -->
-		<?php 
-	}
-	else {
+					?>
+				</section>
+				<section>
+					<h3><?php the_field('vendor_cta_heading', 'option'); ?></h3>
+					<p><?php the_field('vendor_cta_text', 'option'); ?></p>
+					<a href="<?php echo get_site_url(); ?>/vendors#gform_wrapper_2"><?php the_field('vendor_cta_link_text', 'option'); ?></a>
+				</section>
+			
+			</section><!-- .site-vendor-showcase -->
+			<?php 
+		}
+		else {
+			?>
+			<section class="site-vendor-showcase">
+				<h3><?php the_field('vendor_showcase_heading', 'option'); ?></h3>
+				<?php gravity_form( 2, false, false, false, false, true ); ?>
+			</section><!-- .site-vendor-showcase -->
+			<?php 
+		}
 		?>
-		<h3>Sign up to be a vendor here!</h3>
-		<?php
-		gravity_form( 2, false, false, false, false, true ); 
-	}
+			 
+		
+		
+			<section class="site-social-media">
+				<section>
+					<h3><?php the_field('subscribe_heading', 'option'); ?></h3>
+					<?php gravity_form( 1, false, false, false, false, true ); ?>
+				</section>
+				<section>
+					<p><?php the_field('social_media_heading', 'option'); ?></p>
+					<nav>
+						<a href="<?php the_field('facebook', 'option'); ?> "><?php get_template_part( 'icons/facebook' ); ?></a>
+						<a href="<?php the_field('twitter', 'option'); ?> "><?php get_template_part( 'icons/twitterx' ); ?></a>
+						<a href="<?php the_field('instagram', 'option'); ?> "><?php get_template_part( 'icons/instagram' ); ?></a>
+					</nav>
+				</section>
+			</section>
+	<?php 
+	} 
 	?>
-		<div class="site-social-media">
-			<div>
-				<h3>Subscribe to our newsletter!</h3>
-				<?php gravity_form( 1, false, false, false, false, true ); ?>
-			</div>
-			<div>
-				<p>Check out our social media!</p>
-				<div>
-					<a href="<?php echo esc_url( "https://www.facebook.com/" ); ?> "><?php get_template_part( 'icons/facebook' ); ?></a>
-					<a href="<?php echo esc_url( "https://twitter.com/" ); ?> "><?php get_template_part( 'icons/twitterx' ); ?></a>
-					<a href="<?php echo esc_url( "https://www.instagram.com/" ); ?> "><?php get_template_part( 'icons/instagram' ); ?></a>
-				</div>
-			</div>
-		</div>
-		<div class="site-copyright">
+		<section class="site-copyright">
 			<p><a href="#">Privacy Policy</a> | <a href="#">Terms and Conditions</a> | <a href="#">Contact Us</a></p>
+			<p>Built by <a href="#">Taylor Hillier</a>, <a href="#">Zeinab Kordeh</a>, <a href="#">Justin Yu</a>, and <a href="#">Bruce Gerona</a></p>
 			<p>&copy;2023 Vancouver Live</p>
-		</div>
+		</section>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

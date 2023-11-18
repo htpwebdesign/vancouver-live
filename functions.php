@@ -45,6 +45,7 @@ function vancouver_live_setup() {
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
 	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'logo', 75, 75);
 	add_action( 'wp_enqueue_scripts', 'vancouver_live_scripts' );
 
 	// This theme uses wp_nav_menu() in one location.
@@ -150,7 +151,6 @@ function vancouver_live_scripts() {
 	}
 }
 
-add_image_size( 'logo', 75, 75);
 function gf_enqueue_forms() {
     gravity_form_enqueue_scripts( 1, true );
 	if ( is_post_type_archive('vanlive-vendor') ) { 
