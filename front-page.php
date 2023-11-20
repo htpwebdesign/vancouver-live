@@ -16,7 +16,11 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
+		<div class="buttons-sec">
+			<button class="ticket-button">Tickets</button>
+			<button class="schedule-button">Schedule</button>
+		</div>
+		<p class="sub-header-s">The Land of pioneering events. <br>Where service and expertise is at the heart of it all.</p>
 		<?php
 		while ( have_posts() ) :
 			the_post();
