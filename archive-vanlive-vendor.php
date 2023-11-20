@@ -42,7 +42,7 @@ get_header();
 
 			$query = new WP_Query($args);
 			echo '<section class="' . esc_html($tier) . '">';
-				echo '<h2>' . esc_html($tier) . '</h2>';
+				echo '<h2>' . ucfirst(esc_html($tier)) . '</h2>';
 				/* Start the Loop */
 				if($query -> have_posts()) {
 

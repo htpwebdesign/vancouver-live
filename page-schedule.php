@@ -19,9 +19,9 @@ get_header();
 
 <?php
 
-if(function_exists('get_terms')){
-    $terms = get_terms('vli-day', array('hide_empty' => false));
-};
+
+$terms = get_terms('vli-day', array('hide_empty' => false));
+
 
 foreach ($terms as $term) {
     $args = array(
@@ -40,13 +40,14 @@ foreach ($terms as $term) {
     );
 
     $query = new WP_Query($args);
-
+    ?>
+    <section id="<?php echo $term->name; ?>">
+    <?php
     echo '<h2>' . esc_html($term->name) . '</h2>';
 
     // Check if there are posts for the current term
     if ($query->have_posts()) {
         // Start a new list
-        echo '<section>';
         echo '<ul>';
 
         // Loop through the posts for the current term
