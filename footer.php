@@ -83,7 +83,7 @@
 	?>
 		<section class="site-copyright">
 			<p><a href="#">Privacy Policy</a> | <a href="#">Terms and Conditions</a> | <a href="#">Contact Us</a></p>
-			<p>Built by <a href="#">Taylor Hillier</a>, <a href="#">Zeinab Kordeh</a>, <a href="#">Justin Yu</a>, and <a href="#">Bruce Gerona</a></p>
+			<p>Built by <a href="https://www.linkedin.com/in/taylorchillier/">Taylor Hillier</a>, <a href="https://www.linkedin.com/in/zeinabkordeh/">Zeinab Kordeh</a>, <a href="https://www.linkedin.com/in/justinyu1128/">Justin Yu</a>, and <a href="https://www.linkedin.com/in/brucegerona/">Bruce Gerona</a></p>
 			<p>&copy;2023 Vancouver Live</p>
 		</section>
 	</footer><!-- #colophon -->
