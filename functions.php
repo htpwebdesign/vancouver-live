@@ -204,3 +204,8 @@ function custom_archive_title($title) {
 }
 add_filter('get_the_archive_title', 'custom_archive_title');
 
+// Enqueue Google Fonts
+function enqueue_google_fonts() {
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap', false);
+}
+add_action('wp_enqueue_scripts', 'enqueue_google_fonts');

@@ -1,0 +1,206 @@
+
+//.....Video........//
+.wp-block-video{
+  position: relative;
+  width: 100%;
+  height: 50vh; 
+  overflow: hidden;
+}
+
+.wp-block-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  filter: brightness(45%); 
+}
+
+
+//......Title........//
+
+.entry-header {
+  display: flex;
+  justify-content: center;
+}
+
+.entry-title {
+  display: flex;
+  position: absolute;
+  color: $color__text-title ;
+  margin-top: 8rem;
+  margin-left: 6rem;
+  font-size: 2rem;
+  z-index: 9999;
+  width: 20rem;
+  font-weight: $title-font-weight;
+  line-height: 2.5rem;
+}
+
+  .entry-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+    #sub-header-p{
+      position: absolute;
+      color: $color__text-white;
+      z-index: 9999;
+      margin-top: 10rem;
+      font-size: .9rem;
+      width: 15rem;
+      margin-top: 4rem;
+      margin-left: 2rem;
+    }
+
+  }
+
+  .wp-block-columns.is-layout-flex.wp-container-core-columns-layout-3.wp-block-columns-is-layout-flex {
+    margin: 1rem;
+    background-color: $color__background-screen;
+    color: $color__text-white;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .wp-block-image img {
+    height: 25rem;
+    padding-right: 2rem;
+  }
+
+  .wp-block-columns.is-layout-flex.wp-container-core-columns-layout-1.wp-block-columns-is-layout-flex,
+  .wp-block-columns.is-layout-flex.wp-container-core-columns-layout-2.wp-block-columns-is-layout-flex {
+    padding-top: 2rem;
+    padding-left: 2rem;
+    text-align: justify;
+
+    p{
+      padding-right: 2rem;
+    }
+  }
+
+  .wp-block-column.is-layout-flow.wp-block-column-is-layout-flow h2{
+    color: $color__text-title ;
+  }
+
+  .wp-block-button__link{
+    margin: 0 auto;
+    background-color: $color__background-button;
+    color: $color__text-black;
+    border-radius: 0;
+    margin-top: 2rem;
+  }
+
+  body .is-layout-flex {
+    justify-content: center;
+
+    .wp-block-button{
+      margin-right: 1.5rem;
+    }
+
+  }
+
+  @media  (min-width: 400px) and (max-width: 900px){
+
+
+
+    .wp-block-image img {
+      padding-right: 2.5rem;
+      width: 25rem;
+      margin: 0 auto;
+    }
+
+    .wp-block-image {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @media  (min-width: 600px) and (max-width: 1000px){
+
+    .entry-content{  
+      justify-content: left;
+      
+      #sub-header-p{
+        position: absolute;
+        color: $color__text-white;
+        z-index: 9999;
+        margin-left: 5rem;
+        margin-top: 7rem;
+        font-size: 1rem;
+        width: 20rem;
+      }
+    }
+  
+    .entry-header{
+      justify-content: left;
+    }
+  
+    .entry-title {
+      display: flex;
+      position: absolute;
+      color: $color__text-title ;
+      font-size: 3rem;
+      margin-top: 8rem;
+      z-index: 9999;
+      margin-left: 5rem;
+      width: 30rem;
+      font-weight: $title-font-weight;
+      line-height: 3.5rem;
+    }
+
+    .wp-block-columns.is-layout-flex.wp-container-core-columns-layout-3.wp-block-columns-is-layout-flex {
+      display: flex;
+      flex-direction: column;
+    }
+}
+
+
+@media  (min-width: 1001px) {
+
+
+    .entry-content{  
+    
+    #sub-header-p{
+      position: absolute;
+      color: $color__text-white;
+      z-index: 9999;
+      margin-left: -62rem;
+      margin-top: -35rem;
+      font-size: 1.2rem;
+      width: 26rem;
+    }
+
+    .wp-block-buttons{
+      position: absolute;
+      z-index: 999;
+    }
+
+  }
+
+  .entry-header{
+    justify-content: left;
+  }
+
+  .entry-title {
+    display: flex;
+    position: absolute;
+    color: $color__text-title ;
+    font-size: 4rem;
+    margin-top: 7rem;
+    z-index: 9999;
+    margin-left: 9rem;
+    width: 35rem;
+    font-weight: $title-font-weight;
+    line-height: 4.5rem;
+  }
+
+  .wp-block-image img {
+    padding-right: 0;
+  }
+
+  .wp-block-columns.is-layout-flex.wp-container-core-columns-layout-3.wp-block-columns-is-layout-flex {
+    margin: 1rem 4rem;
+
+  }
+}

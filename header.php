@@ -46,12 +46,19 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'vancouver-live' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" style="background: none; border: none; padding: 0; cursor: pointer;">
+			
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px; fill: currentColor; margin-right: 5px;">
+					<line x1="3" y1="12" x2="21" y2="12"></line>
+					<line x1="3" y1="6" x2="21" y2="6"></line>
+					<line x1="3" y1="18" x2="21" y2="18"></line>
+				</svg>
+			</button>
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
+				'theme_location' => 'menu-1',
+				'menu_id'        => 'primary-menu',
 				)
 			);
 			?>

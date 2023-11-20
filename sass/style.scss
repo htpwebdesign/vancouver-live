@@ -80,6 +80,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Components
 --------------------------------------------------------------*/
 @import "components/components";
+@import "components/navigation/header";
+@import "components/content/home";
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
@@ -99,3 +102,4 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Alignments
 --------------------------------------------- */
 @import "utilities/alignments";
+
