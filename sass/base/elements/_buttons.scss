@@ -1,21 +1,41 @@
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+.button,
+#gform_submit_button_1 {
 	border: 1px solid;
 	border-color: $color__border-button;
 	border-radius: 3px;
-	background: $color__background-button;
+	background-color: $color__background-button;
 	color: rgba(0, 0, 0, 0.8);
 	line-height: 1;
 	padding: 0.6em 1em 0.4em;
 
 	&:hover {
 		border-color: $color__border-button-hover;
+		background-color: $color__link-hover;
+		color: $color__text-white;
 	}
 
 	&:active,
 	&:focus {
 		border-color: $color__border-button-focus;
 	}
+}
+
+.button,
+#gform_submit_button_1 {
+	display: block;
+	width: 100%;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 15px;
+	font-size: 1.5rem;
+	padding: 0.6em 1em;
+}
+
+#gform_submit_button_1 {
+	border-radius: 0;
 }

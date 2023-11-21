@@ -16,8 +16,9 @@
 	if(function_exists ('get_field')) {
 		if ( ! is_post_type_archive('vanlive-vendor') ) {?>
 			<section class="site-vendor-showcase">
-				<div>
+				<div class="our-partners">
 					<h2><?php the_field('vendor_showcase_heading', 'option'); ?></h2>
+					<div class="our-partners-wrapper">
 					<?php
 					$args = array(
 							'post_type'      => 'vanlive-vendor',
@@ -42,11 +43,12 @@
 						wp_reset_postdata();
 					}
 					?>
+					</div>
 				</div>
-				<div>
+				<div class="vendor-cta">
 					<h2><?php the_field('vendor_cta_heading', 'option'); ?></h2>
 					<p><?php the_field('vendor_cta_text', 'option'); ?></p>
-					<a href="<?php echo get_site_url(); ?>/vendors#gform_wrapper_2"><?php the_field('vendor_cta_link_text', 'option'); ?></a>
+					<a class="button" href="<?php echo get_site_url(); ?>/vendors#gform_wrapper_2"><?php the_field('vendor_cta_link_text', 'option'); ?></a>
 				</div>
 			
 			</section><!-- .site-vendor-showcase -->
@@ -55,8 +57,10 @@
 		else {
 			?>
 			<section class="site-vendor-showcase">
-				<h2><?php the_field('vendor_showcase_heading', 'option'); ?></h2>
-				<?php gravity_form( 2, false, false, false, false, true ); ?>
+				<div>
+					<h2><?php the_field('vendor_showcase_heading', 'option'); ?></h2>
+					<?php gravity_form( 2, false, false, false, false, true ); ?>
+				</div>
 			</section><!-- .site-vendor-showcase -->
 			<?php 
 		}
@@ -65,11 +69,11 @@
 		
 		
 			<section class="site-social-media">
-				<div>
+				<div class="subscribe-newsletter">
 					<h2><?php the_field('subscribe_heading', 'option'); ?></h2>
 					<?php gravity_form( 1, false, false, false, false, true ); ?>
 				</div>
-				<div>
+				<div class="nav-social-media">
 					<p><?php the_field('social_media_heading', 'option'); ?></p>
 					<nav>
 						<a href="<?php the_field('facebook', 'option'); ?> "><?php get_template_part( 'icons/facebook' ); ?></a>

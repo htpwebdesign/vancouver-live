@@ -1,0 +1,82 @@
+.site-vendor-showcase {
+    display: flex;
+    padding-bottom: 40px;
+    .vendor-cta {
+        width: 38%;
+    }
+    .our-partners {
+        text-align: center;
+        width: 58%;
+        h2 {
+            margin: 0;
+        }
+        .our-partners-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            a {
+                margin: 0 10px 10px;
+            }
+        }
+    }
+}
+
+.site-social-media {
+    background-color: $color__background-screen;
+    position: relative;
+    .subscribe-newsletter {
+        width: fit-content;
+        margin: auto;
+        padding-top: 20px;
+        h2 {
+            font-size: 2.2em;
+            margin: 0;
+            color: $color__text-title;
+        }
+        #gform_1 {
+            #gform_submit_button_1 {
+                width: 100%;
+                font-size: 1.3em;
+            }
+        }
+        
+    }
+    .nav-social-media {
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        p {
+            color: $color__text-white;
+            font-size: 1.3em;
+            margin: 10px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: white;
+            border-radius: 10px;
+            a {
+                height: 50px;
+            }
+        }
+    }
+}
+
+.site-copyright {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: $color__background-screen;
+    p {
+        color: $color__text-white;
+        margin: 10px 0 5px;
+        a {
+            color: $color__text-white;
+            font-weight: bold;
+            text-decoration: none;
+            &:hover {
+                color: $color__text-title;
+            }
+        }
+    }
+}
