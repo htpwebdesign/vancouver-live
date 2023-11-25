@@ -1,5 +1,6 @@
 
 //.....Video........//
+.home{
 .wp-block-video{
   position: relative;
   width: 100%;
@@ -80,7 +81,6 @@
   }
 
   #primary {
-    display: flex;
     justify-content: center;
     align-items: center;
   }
@@ -330,4 +330,5 @@
 
   }
 
+}
 }

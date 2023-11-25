@@ -1,0 +1,43 @@
+.post-type-archive-vanlive-performer{
+
+    color: white;
+
+    article{
+        background-color: $color__background-screen;
+
+            h2{
+                color:$color__text-title;
+    
+                a{
+                    color:$color__text-title;
+                    text-decoration: none;
+                }
+
+            }
+
+            p{
+                padding: 1rem;
+            }
+
+       }
+
+    .headliner{
+      
+        
+    }
+
+    .secondary{
+        .entry-content div{
+            display: none;
+        }
+    }
+
+    .tertiary{
+        display: grid;
+        
+        .entry-content{
+            display: none;
+        }
+       
+    }
+}
