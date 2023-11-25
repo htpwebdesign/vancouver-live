@@ -1,7 +1,7 @@
 .post-type-archive-vanlive-vendor{
     .site{
         margin: 1rem;
-    }
+    };
 
     article{
         display:flex;
@@ -9,6 +9,10 @@
 
         h2{
             text-decoration: none;
-        }
+        };
+    };
+
+    .tier{
+        max-width: 50%;
     }
 }

@@ -28,7 +28,7 @@
             
                 $tier = get_field('vendor_tier');
            
-                if($tier === 'Tier 1'){
+                if($tier === 'Tier 1' || $tier === 'Tier 2'){
 
                     $vendorDesc = get_field('vendor_description');
 

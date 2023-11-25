@@ -41,19 +41,13 @@ get_header();
 			);
 
 			$query = new WP_Query($args);
-			echo '<section class="' . esc_html($tier) . '">';
+			echo '<section class="' . str_replace(' ', '-', esc_html($tier)) . '">';
 				// echo '<h2>' . ucfirst(esc_html($tier)) . '</h2>';
 				/* Start the Loop */
 				if($query -> have_posts()) {
 
 					while ($query -> have_posts()) : $query->the_post();
 						get_template_part('template-parts/content', get_post_type());
-						// if($tier === 'tier 1'){
-						// 	if(function_exists('get_field')) {
-						// 		$vendorDesc = get_field('vendor_description');
-						// 		echo '<p>'. $vendorDesc . '</p>';
-						// 	 }
-						// }
 					endwhile;
 				}
 			echo '</section>';
