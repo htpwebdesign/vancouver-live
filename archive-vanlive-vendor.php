@@ -48,6 +48,12 @@ get_header();
 
 					while ($query -> have_posts()) : $query->the_post();
 						get_template_part('template-parts/content', get_post_type());
+						// if($tier === 'tier 1'){
+						// 	if(function_exists('get_field')) {
+						// 		$vendorDesc = get_field('vendor_description');
+						// 		echo '<p>'. $vendorDesc . '</p>';
+						// 	 }
+						// }
 					endwhile;
 				}
 			echo '</section>';

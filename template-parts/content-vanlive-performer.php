@@ -28,6 +28,7 @@
                 echo '<div>';
                 echo '<p>' . esc_html($about_artist) . '</p>';
                 echo '</div>';
+                
             }
         }
         ?>

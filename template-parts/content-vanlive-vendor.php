@@ -20,9 +20,24 @@
 
 
     <div class="entry-content">
-        <?php  
-        the_post_thumbnail();   
-        the_content();
+        <?php 
+        the_post_thumbnail();  
+        if(function_exists('get_field')) {
+
+            if(get_field('vendor_tier')){
+            
+                $tier = get_field('vendor_tier');
+           
+                if($tier === 'Tier 1'){
+
+                    $vendorDesc = get_field('vendor_description');
+
+                    if($vendorDesc){
+                        echo '<p>'. $vendorDesc . '</p>'; 
+                    }
+                }
+            }
+        }
         ?>
     </div>
 </article>
