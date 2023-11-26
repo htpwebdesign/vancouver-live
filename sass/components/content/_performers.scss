@@ -13,7 +13,6 @@
         z-index: 10;
         background-color: $color__background-screen;
         article{
-            z-index: 10;
                 h2{
                     color: $color__text-title;
                     a{
@@ -31,14 +30,38 @@
     }
 
     .headliner{
-      
+        article{
+            padding: 1rem;
+            display:flex;
+            gap: 5vw;
+
+            &:nth-child(odd){
+                flex-direction: row-reverse;
+                background-color: $color__background-screen;
+            };
+
+            &:nth-child(even){
+                flex-direction: row;
+                background-color: white;
+                .performer-text{
+                    color: $color__background-screen;
+                }
+  
+            };
+
+            .entry-content{
+                margin: auto;
+                max-width: 50%;
+            }
+        }
         
     }
 
     .secondary{
-
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        .performer-articles{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
 
         .entry-content div{
             display: none;
@@ -46,11 +69,14 @@
     }
 
     .tertiary{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        .performer-articles{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        
 
         article{
-            
+
         }
         .entry-content{
             display: none;
