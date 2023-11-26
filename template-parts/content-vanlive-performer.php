@@ -17,8 +17,14 @@
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+        endif;
+        ?>
+    </div>
 
+    <div class="entry-content">
+        <?php   
+        the_post_thumbnail();
+        
         if(function_exists ('get_field')){
             $about_artist = get_field('about_artist');
             if($about_artist){
@@ -30,12 +36,6 @@
                 }
             }
         }
-        ?>
-    </div>
-
-    <div class="entry-content">
-        <?php   
-        the_post_thumbnail();
         ?>
     </div>
 </article>
