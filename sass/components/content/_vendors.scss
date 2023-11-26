@@ -8,21 +8,20 @@
         text-align: center;
     }
 
-    .page-header{
-        position: relative;
+    // .page-header{
+    //     position: relative;
 
-        .hero{
-            background-repeat: no-repeat;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100vw;
-            z-index: -1;
-        }
-    }
+    //     .hero{
+    //         background-repeat: no-repeat;
+    //         position: absolute;
+    //         left: 0;
+    //         top: 0;
+    //         width: 100vw;
+    //         z-index: -1;
+    //     }
+    // }
 
     article{
-        z-index: 10;
 
         h2{
             margin: auto;

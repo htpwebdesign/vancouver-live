@@ -16,6 +16,15 @@ get_header();
 
 			<header class="page-header">
 				<?php
+
+						
+				$hero_image_url = get_post_thumbnail_id('36');
+			
+				if($hero_image_url){
+					$image_url = wp_get_attachment_image_url($hero_image_url);
+					echo '<img class="hero" src="' . esc_url($image_url) . '"/>';
+				}
+
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
@@ -43,12 +52,14 @@ get_header();
 				echo '<section class="' . esc_html($tier) . '">';
 					echo '<h2>' . ucfirst(esc_html($tier)) . '</h2>';
 					/* Start the Loop */
+					echo '<div class="performer-articles">';
 					if($query -> have_posts()) {
 
 						while ($query -> have_posts()) : $query->the_post();
 							get_template_part('template-parts/content', get_post_type());
 						endwhile;
 					}
+					echo '</div>';
 				echo '</section>';
 				wp_reset_postdata();
 			}

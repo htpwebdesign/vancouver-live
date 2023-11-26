@@ -2,24 +2,33 @@
 
     color: white;
 
-    article{
+    h1{
+        padding: 2rem;
+        margin: auto;
+        color: $color__text-title;
+        text-align: center;
+    }
+
+    section{
+        z-index: 10;
         background-color: $color__background-screen;
-
-            h2{
-                color:$color__text-title;
+        article{
+            z-index: 10;
+                h2{
+                    color: $color__text-title;
+                    a{
+                        color:$color__text-title;
+                        text-decoration: none;
+                    }
     
-                a{
-                    color:$color__text-title;
-                    text-decoration: none;
                 }
-
-            }
-
-            p{
-                padding: 1rem;
-            }
-
-       }
+    
+                p{
+                    padding: 1rem;
+                }
+    
+           }
+    }
 
     .headliner{
       
@@ -27,6 +36,10 @@
     }
 
     .secondary{
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
         .entry-content div{
             display: none;
         }
@@ -34,7 +47,11 @@
 
     .tertiary{
         display: grid;
-        
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        article{
+            
+        }
         .entry-content{
             display: none;
         }
