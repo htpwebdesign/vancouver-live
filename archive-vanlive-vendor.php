@@ -17,6 +17,14 @@ get_header();
 
 		<header class="page-header">
 			<?php
+			
+			$hero_image_url = get_post_thumbnail_id('38');
+		
+			if($hero_image_url){
+				$image_url = wp_get_attachment_image_url($hero_image_url);
+				echo '<img class="hero" src="' . esc_url($image_url) . '"/>';
+			}
+
 			the_archive_title( '<h1 class="page-title">', '</h1>' );
 			the_archive_description( '<div class="archive-description">', '</div>' );
 			?>
@@ -27,7 +35,7 @@ get_header();
 		$vendor_acfstatus = 'vendor_tier';
 
 		$vendor_tiers = array('tier 1', 'tier 2', 'tier 3', 'tier 4');
-
+		
 		foreach($vendor_tiers as $tier){
 			$args = array(
 				'post_type'			=> 'vanlive-vendor',
