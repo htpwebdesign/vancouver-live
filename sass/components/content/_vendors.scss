@@ -8,12 +8,15 @@
         text-align: center;
     }
 
+    a{
+        text-decoration: none;
+    }
+
     article{
 
         h2{
             margin: auto;
             a{
-                text-decoration: none;
                 color: $color__text-title;
             }    
         };
@@ -21,6 +24,7 @@
         
         .vendor-text{
             font-weight:700;
+
         }
     };
 
@@ -34,6 +38,10 @@
             &:nth-child(odd){
                 flex-direction: row-reverse;
                 background-color: $color__background-screen;
+
+                a{
+                    color: white;
+                }
             };
 
             &:nth-child(even){
@@ -42,6 +50,10 @@
 
                 .vendor-text{
                     color: $color__background-screen;
+
+                    a{
+                        color: $color__background-screen;
+                    }
                 }
             };
 
@@ -57,7 +69,7 @@
     .tier-2{
         display: grid;
         grid-template-columns: 1fr 1fr;
-
+        background-color: $color__background-screen;
         article{
             padding: 1rem;
 
@@ -75,7 +87,6 @@
     .tier-3{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-
         article{
             padding: 1rem;
 

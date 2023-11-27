@@ -40,20 +40,23 @@ foreach ($terms as $term) {
                 // Get performer details
                 $timeslot = get_field('timeslot');
                 $festival_length = 540;
+
                 // Extract start and end times from the timeslot
                 list($start_time, $end_time) = explode('-', $timeslot);
 
                 // Create DateTime objects for start and end times
                 $start_datetime = strtotime($start_time);
                 $end_datetime = strtotime($end_time);
+
                 // echo $start->format('H:i');
                 $interval = $end_datetime - $start_datetime;
                 $min_interval = $interval/60;
 
                 $percentageHeight = (($min_interval) / $festival_length) * 100;
+                $percentageHeight = $percentageHeight;
                 $post_id = get_the_ID();
                 ?>
-                <div class="scheduled-performer" style="height: <?php echo $percentageHeight; ?>vh; left: <?php echo $leftPosition; ?>;">
+                <div class="scheduled-performer" style="height: <?php echo $percentageHeight; ?>vh; <?php echo $leftPosition; ?>;">
                     <div class="performer-background">
                         <?php echo get_the_post_thumbnail($post_id) ?>
                     </div>  

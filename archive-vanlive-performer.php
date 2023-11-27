@@ -29,7 +29,7 @@ get_header();
 				the_archive_description( '<div class="archive-description">', '</div>' );
 
 				if(function_exists('get_field')){
-					$cta = get_field('performer_cta', 38);
+					$cta = get_field('performer_cta', 36);
 				
 					if($cta){
 						echo '<a href="' . esc_url($cta['url']) . '">' . esc_html($cta['title']) . '</a>';

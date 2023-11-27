@@ -30,8 +30,9 @@
             if($about_artist){
                 $performer_tier = get_field('performer_status');
                 if($performer_tier === 'Headliner'){
+                    $about_artist = substr($about_artist, 0, 200) . '<a href="' . esc_url(get_permalink()) . '"> ...</a>';
                     echo '<div>';
-                    echo '<p>' . esc_html($about_artist) . '</p>';
+                    echo '<p>' . $about_artist . '</p>';
                     echo '</div>';
                 }
             }

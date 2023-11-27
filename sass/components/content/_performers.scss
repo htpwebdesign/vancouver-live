@@ -9,6 +9,10 @@
         text-align: center;
     }
 
+    a{
+        text-decoration: none;
+    }
+
     
     h2{
         margin: 0;
@@ -27,7 +31,7 @@
                     color: $color__text-title;
                     a{
                         color:$color__text-title;
-                        text-decoration: none;
+                       
                     }
     
                 }
@@ -43,6 +47,21 @@
       
         article{
             padding: 1rem;
+
+            .entry-content{
+                a{
+                    color: white;
+                }
+            }
+
+            &:nth-child(even){
+                background-color: white;
+                color: $color__background-screen;
+                
+                .entry-content a{
+                    color: $color__background-screen;
+                }
+            }
         }  
     }
 
@@ -52,12 +71,12 @@
             grid-template-columns: 1fr 1fr;
         }
 
-        .entry-content div{
-            display: none;
-        }
+        
     }
 
     .tertiary{
+        background-color: white;
+
         .performer-articles{
             display: flex;
             justify-content: space-around;
@@ -65,11 +84,10 @@
         
 
         article{
-
+            .entry-content{
+                display: none;
+            }
+            
         }
-        .entry-content{
-            display: none;
-        }
-       
     }
 }
