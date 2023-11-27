@@ -25,12 +25,14 @@
             
                 $tier = get_field('vendor_tier');
            
-                if($tier === 'Tier 1' || $tier === 'Tier 2'){
+                if($tier === 'Tier 1'){
 
                     $vendorDesc = get_field('vendor_description');
 
-                    if($vendorDesc){
-                        echo '<p>'. $vendorDesc . '</p>'; 
+                    if ($vendorDesc) {
+                        // Truncate to 100 characters and add "..."
+                        $vendorDesc = substr($vendorDesc, 0, 50) . '<a href="' . esc_url(get_permalink()) . '">...</a>';
+                        echo '<p>' . $vendorDesc . '</p>';
                     }
                 }
             }
