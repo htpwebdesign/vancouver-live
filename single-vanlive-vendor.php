@@ -17,10 +17,7 @@ get_header();
 			the_post();
 
 			get_template_part( 'template-parts/content', get_post_type() );
-			if(function_exists('get_field')) {
-				$vendorDesc = get_field('vendor_description');
-				echo '<p>'. $vendorDesc . '</p>';
-			 }
+			
 			 
 			the_post_navigation(
 				array(

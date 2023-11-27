@@ -17,6 +17,8 @@
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif; 
 
+        if(is_archive() ):
+                
         if(function_exists('get_field')) {
 
             if(get_field('vendor_tier')){
@@ -32,12 +34,33 @@
                     }
                 }
             }
-        }?>
+        }
+         endif;
+        ?>
         </div>
         <div 
         class="entry-content">
             <?php 
             the_post_thumbnail();  
+
+            if(is_single()):
+                if(function_exists('get_field')) {
+
+                    if(get_field('vendor_tier')){
+                    
+                        $tier = get_field('vendor_tier');
+                   
+                        if($tier === 'Tier 1' || $tier === 'Tier 2'){
+        
+                            $vendorDesc = get_field('vendor_description');
+        
+                            if($vendorDesc){
+                                echo '<p>'. $vendorDesc . '</p>'; 
+                            }
+                        }
+                    }
+                }
+            endif;
             ?>
         </div>
 
