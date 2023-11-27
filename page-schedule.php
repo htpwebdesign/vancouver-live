@@ -26,8 +26,8 @@ foreach ($terms as $term) {
 
     $query = new WP_Query($args);
     ?>
-    <section id="<?php echo $term->name; ?>">
-        <?php
+   <?php 
+        echo '<section id="' . str_replace(' ', '-', esc_html($term->name)) . '">';
         echo '<h2>' . esc_html($term->name) . '</h2>';
 
         // Check if there are posts for the current term
@@ -51,10 +51,16 @@ foreach ($terms as $term) {
                 $min_interval = $interval/60;
 
                 $percentageHeight = (($min_interval) / $festival_length) * 100;
+                $post_id = get_the_ID();
                 ?>
                 <div class="scheduled-performer" style="height: <?php echo $percentageHeight; ?>vh; left: <?php echo $leftPosition; ?>;">
-                    <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo get_the_title(); ?></a>
-                    <span><?php echo esc_html($timeslot); ?></span>
+                    <div class="performer-background">
+                        <?php echo get_the_post_thumbnail($post_id) ?>
+                    </div>  
+                    <div class="performer-content">
+                        <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo get_the_title(); ?></a>
+                        <span><?php echo esc_html($timeslot); ?></span>
+                    </div>
                 </div>
                 <?php
             endwhile;

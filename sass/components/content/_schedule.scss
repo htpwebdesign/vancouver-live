@@ -1,6 +1,59 @@
 .page-id-34{
+    
+    a{
+        text-decoration: none;
+    }
+
+    #Day-1{
+        a{
+            color: $color__text-title;
+        }
+    }
+
+    #Day-2{
+        a{
+            color: $color__background-button;
+        }
+    }
+
+    h2{
+        margin: auto;
+        text-align: center;
+    }
+
+    .site-main{
+
+        section{
+            margin: 2rem auto;
+        }
+    }
 
     .scheduled-performer{
-        border: solid;
+        position: relative;
     }
+
+    .performer-background {
+        max-width: 100%; /* Adjust as needed */
+        overflow: hidden;
+        max-height: 100%;
+        position: absolute;
+        z-index: -1;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(50%);
+        }
+    }
+
+    .performer-content{
+        font-size: 125%;
+        color: white;
+        position: absolute;
+        bottom: 0;
+        left: 1rem;
+    }
+   
 }

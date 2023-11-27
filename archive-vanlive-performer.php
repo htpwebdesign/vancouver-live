@@ -27,6 +27,14 @@ get_header();
 
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
+
+				if(function_exists('get_field')){
+					$cta = get_field('performer_cta', 38);
+				
+					if($cta){
+						echo '<a href="' . esc_url($cta['url']) . '">' . esc_html($cta['title']) . '</a>';
+					}
+				}
 				?>
 			</header><!-- .page-header -->
 
