@@ -1,17 +1,4 @@
 <?php
-/**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Vancouver_Live
- */
-
 get_header();
 ?>
 
@@ -19,9 +6,7 @@ get_header();
 
 <?php
 
-
 $terms = get_terms('vli-day', array('hide_empty' => false));
-
 
 foreach ($terms as $term) {
     $args = array(
@@ -36,44 +21,53 @@ foreach ($terms as $term) {
         ),
         'meta_key'       => 'timeslot',
         'orderby'        => 'meta_value',
-            'order'     => 'DESC',
+        'order'          => 'DESC',
     );
 
     $query = new WP_Query($args);
     ?>
     <section id="<?php echo $term->name; ?>">
-    <?php
-    echo '<h2>' . esc_html($term->name) . '</h2>';
+        <?php
+        echo '<h2>' . esc_html($term->name) . '</h2>';
 
-    // Check if there are posts for the current term
-    if ($query->have_posts()) {
-        // Start a new list
-        echo '<ul>';
+        // Check if there are posts for the current term
+        if ($query->have_posts()) {
+            // Start a new container
+            echo '<div class="schedule-container">';
 
-        // Loop through the posts for the current term
-        while ($query->have_posts()) : $query->the_post();
-            ?>
-            <li id="<?php the_ID(); ?>">
-                <?php echo '<a href="' . esc_url( get_permalink() ) . '">' . get_the_title() . '</a>'; ?>
-                <?php
-                if(function_exists('get_field')){
-                 $selected_option = get_field('timeslot');   
-                }
+            // Loop through the posts for the current term
+            while ($query->have_posts()) : $query->the_post();
+                // Get performer details
+                $timeslot = get_field('timeslot');
+                $festival_length = 540;
+                // Extract start and end times from the timeslot
+                list($start_time, $end_time) = explode('-', $timeslot);
+
+                // Create DateTime objects for start and end times
+                $start_datetime = strtotime($start_time);
+                $end_datetime = strtotime($end_time);
+                // echo $start->format('H:i');
+                $interval = $end_datetime - $start_datetime;
+                $min_interval = $interval/60;
+
+                $percentageHeight = (($min_interval) / $festival_length) * 100;
                 ?>
-                <?php echo esc_html($selected_option); ?>
-            </li>
-            <?php
-        endwhile;
+                <div class="scheduled-performer" style="height: <?php echo $percentageHeight; ?>vh; left: <?php echo $leftPosition; ?>;">
+                    <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo get_the_title(); ?></a>
+                    <span><?php echo esc_html($timeslot); ?></span>
+                </div>
+                <?php
+            endwhile;
 
-        // Close the list
-        echo '</ul>';
-        echo '</section>';
+            // Close the container
+            echo '</div>';
+            echo '</section>';
+        }
+
+        // Reset the query
+        wp_reset_postdata();
     }
-
-    // Reset the query
-    wp_reset_postdata();
-}
-?>
+    ?>
 
 </main><!-- #main -->
 
