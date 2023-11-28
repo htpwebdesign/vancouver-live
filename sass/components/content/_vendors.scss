@@ -14,23 +14,32 @@
 
     section{
         margin-top: 10vh;
+        background-color: $color__background-screen;
+        .section-header{
+            background-color: white;
+            display: flex;
+        
+            h2 {
+                color: $color__text-title;
+                width: 100%;
+                margin: auto;
+                text-align: center;
+                font-size: 2rem;
+            }
+        
+        }
+
+        .section-desc{
+            background-color: white;
+            padding: 1rem;
+            p{
+                margin: 0;
+                color: $color__background-screen;
+                text-align: center;
+            }
+        }
     }
 
-    .section-header{
-        display: flex;
-        position: relative;
-        h2 {
-            color: $color__text-title;
-            width: 100%;
-            margin: 0;
-            line-height: 0;
-            position:absolute;
-            bottom: 0.8rem;
-            left: 0;
-            font-size: 2rem;
-        }
-    
-    }
 
     article{
 
@@ -56,11 +65,11 @@
             gap: 5vw;
             }
             &:nth-child(odd){
-                background-color: white;
                 .article-content{
                     grid-template-columns: 2fr 1fr;
                     .vendor-text{
-                        color: $color__background-screen;
+                      
+                        color: white;
                     }
                 }
 
@@ -75,8 +84,9 @@
                         grid-row-start: 1;
                     }
                     .vendor-text{
-                        color: $color__background-screen;
+                       
                         grid-column-start: 2;
+                        color: white;
                     }
                 }
 
