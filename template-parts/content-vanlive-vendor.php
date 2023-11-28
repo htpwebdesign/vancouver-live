@@ -10,6 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div class="article-content">
         <div class="vendor-text">
         <?php if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -30,8 +31,6 @@
                     $vendorDesc = get_field('vendor_description');
 
                     if ($vendorDesc) {
-                        // Truncate to 100 characters and add "..."
-                        // $vendorDesc = substr($vendorDesc, 0, 50) . '<a href="' . esc_url(get_permalink()) . '"> ...</a>';
                         echo '<p>' . $vendorDesc . '</p>';
                     }
                 }
@@ -65,5 +64,5 @@
             endif;
             ?>
         </div>
-
+    </div>
 </article>
