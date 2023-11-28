@@ -58,10 +58,9 @@ get_header();
 		
 			$query = new WP_Query($args);
 			echo '<section class="' . str_replace(' ', '-', esc_html($tier)) . '">';
-			echo '<div class="section-header">';
 			if (function_exists('get_field')) {
 				$rows = get_field('vendor_tier_names', 38);
-			
+				echo '<div class="section-header">';
 				if ($rows) {
 					while (have_rows('vendor_tier_names', 38)) : the_row();
 						if($tier === 'tier 1'){
@@ -79,7 +78,8 @@ get_header();
 						
 					endwhile;
 				}
-
+				echo '</div>';
+				echo '<div class="section-desc">';
 				$rows2 = get_field('vendor_tier_desc', 38);
 			
 				if ($rows2) {
@@ -99,8 +99,8 @@ get_header();
 						
 					endwhile;
 				}
+				echo '</div>';
 			}
-			echo '</div>';
 			if ($query->have_posts()) {
 				while ($query->have_posts()) : $query->the_post();
 					get_template_part('template-parts/content', get_post_type());
