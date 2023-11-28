@@ -44,31 +44,73 @@ get_header();
 
 		$vendor_tiers = array('tier 1', 'tier 2', 'tier 3', 'tier 4');
 		
-		foreach($vendor_tiers as $tier){
+		foreach ($vendor_tiers as $tier) {
 			$args = array(
-				'post_type'			=> 'vanlive-vendor',
-				'posts_per_page'	=> -1,
-				'meta_query'		=> array(
+				'post_type'         => 'vanlive-vendor',
+				'posts_per_page'    => -1,
+				'meta_query'        => array(
 					array(
-						'key'	=> $vendor_acfstatus,
-						'value'	=> $tier,
+						'key'   => $vendor_acfstatus,
+						'value' => $tier,
 					),
 				),
 			);
-
+		
 			$query = new WP_Query($args);
 			echo '<section class="' . str_replace(' ', '-', esc_html($tier)) . '">';
-				// echo '<h2>' . ucfirst(esc_html($tier)) . '</h2>';
-				/* Start the Loop */
-				if($query -> have_posts()) {
-
-					while ($query -> have_posts()) : $query->the_post();
-						get_template_part('template-parts/content', get_post_type());
+			if (function_exists('get_field')) {
+				$rows = get_field('vendor_tier_names', 38);
+				echo '<div class="section-header">';
+				if ($rows) {
+					while (have_rows('vendor_tier_names', 38)) : the_row();
+						if($tier === 'tier 1'){
+							echo '<h2>' . get_sub_field('tier_1') . '</h2>';
+						}
+						if($tier === 'tier 2'){
+							echo '<h2>' . get_sub_field('tier_2') . '</h2>';
+						}
+						if($tier === 'tier 3'){
+							echo '<h2>' . get_sub_field('tier_3') . '</h2>';
+						}
+						if($tier === 'tier 4'){
+							echo '<h2>' . get_sub_field('tier_4') . '</h2>';
+						}
+						
 					endwhile;
 				}
+				echo '</div>';
+				echo '<div class="section-desc">';
+				$rows2 = get_field('vendor_tier_desc', 38);
+			
+				if ($rows2) {
+					while (have_rows('vendor_tier_desc', 38)) : the_row();
+						if($tier === 'tier 1'){
+							echo '<p>' . get_sub_field('tier_1') . '</p>';
+						}
+						if($tier === 'tier 2'){
+							echo '<p>' . get_sub_field('tier_2') . '</p>';
+						}
+						if($tier === 'tier 3'){
+							echo '<p>' . get_sub_field('tier_3') . '</p>';
+						}
+						if($tier === 'tier 4'){
+							echo '<p>' . get_sub_field('tier_4') . '</p>';
+						}
+						
+					endwhile;
+				}
+				echo '</div>';
+			}
+			if ($query->have_posts()) {
+				while ($query->have_posts()) : $query->the_post();
+					get_template_part('template-parts/content', get_post_type());
+				endwhile;
+			}
+		
 			echo '</section>';
 			wp_reset_postdata();
 		}
+		
 			the_posts_navigation();
 
 		else :

@@ -6,6 +6,22 @@ get_header();
 
 <?php
 
+?>
+    <div class='schedule-header'>
+        <h1 class='schedule-title'>Our Schedule</h1>
+        <p>All vendors will be open from festival open to close.
+        <?php 
+            if(function_exists('get_field')){
+                $vendor_link = get_field('vendor_link');
+
+                if($vendor_link){
+                    echo '<a href="' . esc_url($vendor_link['url']) . '">' . esc_html($vendor_link['title']) . '&#8594;</a>';
+                };
+            };
+        ?>
+        </p>
+    </div>
+<?php
 $terms = get_terms('vli-day', array('hide_empty' => false));
 
 foreach ($terms as $term) {
@@ -40,26 +56,31 @@ foreach ($terms as $term) {
                 // Get performer details
                 $timeslot = get_field('timeslot');
                 $festival_length = 540;
+
                 // Extract start and end times from the timeslot
                 list($start_time, $end_time) = explode('-', $timeslot);
 
                 // Create DateTime objects for start and end times
                 $start_datetime = strtotime($start_time);
                 $end_datetime = strtotime($end_time);
-                // echo $start->format('H:i');
+
+                $timeslot_start = date('h:iA', $start_datetime);
+                $timeslot_end = date('h:iA', $end_datetime);
+
                 $interval = $end_datetime - $start_datetime;
                 $min_interval = $interval/60;
 
                 $percentageHeight = (($min_interval) / $festival_length) * 100;
+                $percentageHeight = $percentageHeight;
                 $post_id = get_the_ID();
                 ?>
-                <div class="scheduled-performer" style="height: <?php echo $percentageHeight; ?>vh; left: <?php echo $leftPosition; ?>;">
+                <div class="scheduled-performer" style="height: <?php echo $percentageHeight; ?>vh; <?php echo $leftPosition; ?>;">
                     <div class="performer-background">
                         <?php echo get_the_post_thumbnail($post_id) ?>
                     </div>  
                     <div class="performer-content">
                         <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo get_the_title(); ?></a>
-                        <span><?php echo esc_html($timeslot); ?></span>
+                        <span><?php echo esc_html($timeslot_start). ' - ' .esc_html($timeslot_end); ?></span>
                     </div>
                 </div>
                 <?php

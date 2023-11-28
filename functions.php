@@ -210,19 +210,3 @@ function enqueue_google_fonts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_google_fonts');
 
-/**
- * Disable the block editor (Gutenberg) for a specific page.
- */
-// function disable_block_editor_for_page() {
-//         // Disable the block editor.
-//         add_filter('use_block_editor_for_post', '__return_false', 'vendors');
-// 		add_filter('use_block_editor_for_post', '__return_false', 'performers');
-// 		add_filter('user_can_richedit', '__return_false', 'vendors');
-// 		add_filter('user_can_richedit', '__return_false', 'performers');
-
-// 		if (is_front_page()) {
-// 			add_filter('use_block_editor_for_post', '__return_false');
-// 			add_filter('user_can_richedit', '__return_false');
-// 		}	
-// }
-// add_action('init', 'disable_block_editor_for_page');

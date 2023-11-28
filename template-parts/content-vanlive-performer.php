@@ -30,9 +30,22 @@
             if($about_artist){
                 $performer_tier = get_field('performer_status');
                 if($performer_tier === 'Headliner'){
+                    if(is_archive()){
+                        $about_artist = substr($about_artist, 0, 200) . '<a href="' . esc_url(get_permalink()) . '"> ...</a>';
+                    };
                     echo '<div>';
-                    echo '<p>' . esc_html($about_artist) . '</p>';
+                    echo '<p>' . $about_artist . '</p>';
                     echo '</div>';
+                }
+            }
+        }
+
+        if(is_singular()){
+            if(function_exists('get_field')){
+                $to_archive = get_field('p_single_to_archive', 36);
+              
+                if($to_archive){
+                    echo '<a href="' . esc_url($to_archive['url']) . '">' . esc_html($to_archive['title']) . '</a>';
                 }
             }
         }

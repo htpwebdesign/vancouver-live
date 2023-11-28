@@ -1,7 +1,21 @@
 
 .page-header{
     position: relative;
-    height: 50vh;
+    height: 40vh;
+    overflow: hidden;
+   
+    display:flex;
+    flex-direction: column;
+
+    a{
+        background-color: $color__background-button;
+        color: white;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        margin: auto;
+    }
+    
+
     .hero{
         background-repeat: no-repeat;
         position: absolute;
@@ -9,5 +23,6 @@
         top: 0;
         width: 100vw;
         z-index: -1;
+        filter: brightness(50%);
     }
 }

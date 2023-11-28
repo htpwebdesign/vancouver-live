@@ -10,6 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div class="article-content">
         <div class="vendor-text">
         <?php if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -25,12 +26,12 @@
             
                 $tier = get_field('vendor_tier');
            
-                if($tier === 'Tier 1' || $tier === 'Tier 2'){
+                if($tier === 'Tier 1'){
 
                     $vendorDesc = get_field('vendor_description');
 
-                    if($vendorDesc){
-                        echo '<p>'. $vendorDesc . '</p>'; 
+                    if ($vendorDesc) {
+                        echo '<p>' . $vendorDesc . '</p>';
                     }
                 }
             }
@@ -63,5 +64,5 @@
             endif;
             ?>
         </div>
-
+    </div>
 </article>

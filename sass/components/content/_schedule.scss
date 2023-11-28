@@ -3,6 +3,9 @@
     a{
         text-decoration: none;
     }
+    h2{
+        color: $color__text-title;
+    }
 
     #Day-1{
         a{
@@ -53,7 +56,9 @@
         color: white;
         position: absolute;
         bottom: 0;
-        left: 1rem;
+        left: 0;
+        background-color: $color__background-screen;
+        padding: 0.5rem 0.5rem;
     }
    
 }
