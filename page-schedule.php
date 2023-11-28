@@ -6,6 +6,10 @@ get_header();
 
 <?php
 
+?>
+<h1 class='schedule-title'>Our Schedule</h1>
+<p>All vendors will be open from </p>
+<?php
 $terms = get_terms('vli-day', array('hide_empty' => false));
 
 foreach ($terms as $term) {
@@ -48,7 +52,9 @@ foreach ($terms as $term) {
                 $start_datetime = strtotime($start_time);
                 $end_datetime = strtotime($end_time);
 
-                // echo $start->format('H:i');
+                $timeslot_start = date('h:iA', $start_datetime);
+                $timeslot_end = date('h:iA', $end_datetime);
+
                 $interval = $end_datetime - $start_datetime;
                 $min_interval = $interval/60;
 
@@ -62,7 +68,7 @@ foreach ($terms as $term) {
                     </div>  
                     <div class="performer-content">
                         <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo get_the_title(); ?></a>
-                        <span><?php echo esc_html($timeslot); ?></span>
+                        <span><?php echo esc_html($timeslot_start). ' - ' .esc_html($timeslot_end); ?></span>
                     </div>
                 </div>
                 <?php
