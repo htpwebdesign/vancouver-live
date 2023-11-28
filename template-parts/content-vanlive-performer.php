@@ -39,6 +39,16 @@
                 }
             }
         }
+
+        if(is_singular()){
+            if(function_exists('get_field')){
+                $to_archive = get_field('p_single_to_archive', 36);
+              
+                if($to_archive){
+                    echo '<a href="' . esc_url($to_archive['url']) . '">' . esc_html($to_archive['title']) . '</a>';
+                }
+            }
+        }
         ?>
     </div>
 </article>

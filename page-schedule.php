@@ -7,8 +7,20 @@ get_header();
 <?php
 
 ?>
-<h1 class='schedule-title'>Our Schedule</h1>
-<p>All vendors will be open from </p>
+    <div class='schedule-header'>
+        <h1 class='schedule-title'>Our Schedule</h1>
+        <p>All vendors will be open from festival open to close.
+        <?php 
+            if(function_exists('get_field')){
+                $vendor_link = get_field('vendor_link');
+
+                if($vendor_link){
+                    echo '<a href="' . esc_url($vendor_link['url']) . '">' . esc_html($vendor_link['title']) . '&#8594;</a>';
+                };
+            };
+        ?>
+        </p>
+    </div>
 <?php
 $terms = get_terms('vli-day', array('hide_empty' => false));
 
