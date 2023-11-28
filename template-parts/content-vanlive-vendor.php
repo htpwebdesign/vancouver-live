@@ -31,7 +31,7 @@
 
                     if ($vendorDesc) {
                         // Truncate to 100 characters and add "..."
-                        $vendorDesc = substr($vendorDesc, 0, 50) . '<a href="' . esc_url(get_permalink()) . '"> ...</a>';
+                        // $vendorDesc = substr($vendorDesc, 0, 50) . '<a href="' . esc_url(get_permalink()) . '"> ...</a>';
                         echo '<p>' . $vendorDesc . '</p>';
                     }
                 }

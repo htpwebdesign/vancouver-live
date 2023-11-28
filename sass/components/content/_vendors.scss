@@ -50,6 +50,11 @@
 
                 .vendor-text{
                     color: $color__background-screen;
+                    max-width: 50vw;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 5;
+                    display: -webkit-box;
+                    overflow: hidden;
 
                     a{
                         color: $color__background-screen;
