@@ -1,0 +1,32 @@
+#post-31 .post-thumbnail  {
+    height: 50vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+#post-31 .post-thumbnail img { 
+    filter: brightness(60%);
+}
+
+
+#post-31 .entry-title {
+    display: flex;
+    position: absolute;
+    color: $color__text-title ;
+    margin-top: 8rem;
+    margin-left: 6rem;
+    font-size: 5rem;
+    z-index: 9999;
+    width: 25rem;
+    font-weight: $title-font-weight;
+    line-height: 2.5rem;
+  }
+
+
+  #post-31  #wpsm_accordion_84 {
+    width: 80%;
+    margin: 0 auto;
+  }

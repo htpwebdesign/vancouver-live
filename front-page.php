@@ -15,27 +15,99 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-		<div class="buttons-sec">
-			<button class="ticket-button">Tickets</button>
-			<button class="schedule-button">Schedule</button>
-		</div>
-		<p class="sub-header-s">The Land of pioneering events. <br>Where service and expertise is at the heart of it all.</p>
-		<?php
-		while ( have_posts() ) :
-			the_post();
+<main id="primary" class="site-main">
 
-			get_template_part( 'template-parts/content', 'page' );
+    <?php
+    echo '<section class="buttons-sec">';
+	echo '<button class="ticket-button"><a href="' . get_permalink(22) . '" >Tickets</a></button>';
+	echo '<button class="schedule-button"><a href="' . get_permalink(34) . '" >Schedule</a></button>';
+    echo '</section>';
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+	echo '<section class="banner-content-text">';
+	echo '<p class="sub-header-s">The Land of pioneering events. <br>Where service and expertise is at the heart of it all.</p>';
+	echo '</section>';
+    ?>
 
-		endwhile; // End of the loop.
-		?>
 
-	</main><!-- #main -->
+
+    <?php
+    while (have_posts()) :
+        the_post();
+
+        get_template_part('template-parts/content', 'page');
+
+        // If comments are open or we have at least one comment, load up the comment template.
+        if (comments_open() || get_comments_number()) :
+            comments_template();
+        endif;
+
+    endwhile; // End of the loop.
+
+	echo'<div class="events-home">';
+    
+    $event_sections = get_field('events_section');
+
+    if ($event_sections) {
+
+		foreach ($event_sections as $section) {
+
+			$title = $section['events_section_title'];
+            $links = $section['events_section_link'];
+            $media = $section['events_section_media'];
+            $text = $section['events_section_textarea'];
+            
+            ?>
+            <section class="event-section">
+				<h2><?php echo $title; ?></h2>
+				
+					<img src="<?php echo esc_url($media['url']); ?>" alt="<?php echo esc_attr($media['alt']); ?>">
+					<p><?php echo $text; ?></p>
+
+					<?php
+
+				if (is_array($links) && !empty($links)) {
+					$first_link = reset($links);
+					?>
+					<a href="<?php echo esc_url($first_link); ?>">Read More</a>
+					<?php
+				}
+				?>
+			</section>
+            <?php
+        }
+    }
+
+	$second_events_sections = get_field('second_events_section');
+		foreach ($second_events_sections as $section) {
+
+			$title = $section['second_events_title'];
+            $links = $section['second_events_link'];
+            $media = $section['second_events_media'];
+            $text = $section['second_events_textarea'];
+            
+            ?>
+            <section class="second-event-section">
+				<h2><?php echo $title; ?></h2>
+					
+					<img src="<?php echo esc_url($media['url']); ?>" alt="<?php echo esc_attr($media['alt']); ?>">
+					<p><?php echo $text; ?></p>
+
+					<?php
+
+				if (is_array($links) && !empty($links)) {
+					$first_link = reset($links);
+					?>
+					<a href="<?php echo esc_url($first_link); ?>">Read More</a>
+					<?php
+				}
+				?>
+			</section>
+            <?php
+        }
+	echo'</div>';
+    ?>
+
+</main><!-- #main -->
 
 <?php
 get_footer();
