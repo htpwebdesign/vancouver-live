@@ -25,17 +25,21 @@
                 $performer_tier = get_field('performer_status');
                 if($performer_tier === 'Headliner' || is_singular()){
                     echo '<div class="artist-desc">';
+
                     echo '<p>' . $about_artist . '</p>';
+
+                    if(is_singular()){
+
+                        if(function_exists('get_field')){
+                            $to_sched = get_field('link_to_schedule', 34);
+                              
+                            if($to_sched){
+                                echo '<p class="to-sched">Find out when your favorite artist is performing.<br> <a class ="to-sched-link" href="' . esc_url($to_sched['url']) . '">' . esc_html($to_sched['title']) . '&#8594;</a></p>';
+                                echo '<p class="or">or</p>';
+                            }
+                        }
+                    }
                     echo '</div>';
-                }
-            }
-        }
-        if(is_singular()){
-            if(function_exists('get_field')){
-                $to_archive = get_field('p_single_to_archive', 36);
-              
-                if($to_archive){
-                    echo '<a href="' . esc_url($to_archive['url']) . '">' . esc_html($to_archive['title']) . '</a>';
                 }
             }
         }
@@ -45,7 +49,20 @@
     <div class="entry-content">
         <?php   
         the_post_thumbnail();
-        
         ?>
     </div>
+    
 </article>
+<?php
+    if(is_singular()){
+        if(function_exists('get_field')){
+            $to_archive = get_field('p_single_to_archive', 36);
+              
+            if($to_archive){
+              
+                echo '<a class ="to-archive" href="' . esc_url($to_archive['url']) . '">' . esc_html($to_archive['title']) . '</a>';
+               
+            }
+        }
+    }
+?>
