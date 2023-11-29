@@ -23,10 +23,49 @@
     }
 
     section{
-        z-index: 10;
+        margin-top: 10vh;
         background-color: $color__background-screen;
-        article{
+        z-index: 10;
+
+        .section-desc{
+            background-color: white;
             padding: 1rem;
+            p{
+                margin: 0;
+                color: $color__background-screen;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+
+        .section-header{
+            background-color: white;
+            display: flex;
+        
+            h2 {
+                color: $color__text-title;
+                width: 100%;
+                margin: auto;
+                text-align: center;
+                font-size: 2rem;
+            }
+        
+        }
+
+        article{
+
+            padding: 1rem;
+
+            
+            @media(min-width:37.5em) {
+                padding: 2rem;
+            }
+
+            .performer-text{
+                h2{
+                    margin: 1rem 0;
+                }
+            }
                 h2{
                     color: $color__text-title;
                     a{
@@ -38,37 +77,86 @@
     
                 p{
                     margin: 0;
+                   
                 }
     
            }
+
+          
     }
 
     .headliner{
+    
+        a:hover{
+            color: white;
+        }
       
+        .performer-articles{
+            @media(min-width:50em) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            @media(min-width:100em) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                padding: 1rem;
+            }
+        }
         article{
-            padding: 1rem;
+
+            display: flex;
+            flex-direction: column-reverse;
 
             .entry-content{
                 a{
                     color: white;
                 }
-            }
 
-            &:nth-child(even){
-                background-color: white;
-                color: $color__background-screen;
-                
-                .entry-content a{
-                    color: $color__background-screen;
+                margin: auto;
+             
+                img{
+                    object-fit: contain;
+                    object-position: center;
+                    max-height: 50vh;
+
+                    @media(min-width:50em){
+                        max-height: 33.33vh;
+                    }
                 }
             }
+
+           
         }  
+
+        .artist-desc{
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 9;
+            display: -webkit-box;
+            overflow: hidden;
+            p{
+                margin: 0;
+            }
+
+            @media(min-width: 37.5rem) {
+                -webkit-line-clamp: none;
+                display: block;
+            }
+        }
     }
 
     .secondary{
+
+        a:hover{
+            color: white;
+        }
+
         .performer-articles{
             display: grid;
             grid-template-columns: 1fr 1fr;
+        }
+
+        .performer-text h2{
+            text-align: center;
         }
 
         
@@ -76,7 +164,9 @@
 
     .tertiary{
         background-color: white;
-
+        a:hover{
+            color: $color__background-screen;
+        }
         .performer-articles{
             display: flex;
             justify-content: space-around;

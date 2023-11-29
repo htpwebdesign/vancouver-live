@@ -101,12 +101,13 @@ get_header();
 				}
 				echo '</div>';
 			}
+			echo '<div class="article-container">';
 			if ($query->have_posts()) {
 				while ($query->have_posts()) : $query->the_post();
 					get_template_part('template-parts/content', get_post_type());
 				endwhile;
 			}
-		
+			echo '</div>';
 			echo '</section>';
 			wp_reset_postdata();
 		}

@@ -58,7 +58,42 @@ get_header();
 
 				$query = new WP_Query($args);
 				echo '<section class="' . esc_html($tier) . '">';
-					echo '<h2>' . ucfirst(esc_html($tier)) . '</h2>';
+				if (function_exists('get_field')) {
+					$rows = get_field('performer_tier_names', 36);
+					echo '<div class="section-header">';
+					if ($rows) {
+						while (have_rows('performer_tier_names', 36)) : the_row();
+							if($tier === 'headliner'){
+								echo '<h2>' . get_sub_field('tier_1') . '</h2>';
+							}
+							if($tier === 'secondary'){
+								echo '<h2>' . get_sub_field('tier_2') . '</h2>';
+							}
+							if($tier === 'tertiary'){
+								echo '<h2>' . get_sub_field('tier_3') . '</h2>';
+							}
+							
+						endwhile;
+					}
+					echo '</div>';
+					echo '<div class="section-desc">';
+					$rows2 = get_field('performer_tier_desc', 36);
+				
+					if ($rows2) {
+						while (have_rows('performer_tier_desc', 36)) : the_row();
+							if($tier === 'headliner'){
+								echo '<p>' . get_sub_field('tier_1') . '</p>';
+							}
+							if($tier === 'secondary'){
+								echo '<p>' . get_sub_field('tier_2') . '</p>';
+							}
+							if($tier === 'tertiary'){
+								echo '<p>' . get_sub_field('tier_3') . '</p>';
+							}
+						endwhile;
+					}
+					echo '</div>';
+				}
 					/* Start the Loop */
 					echo '<div class="performer-articles">';
 					if($query -> have_posts()) {

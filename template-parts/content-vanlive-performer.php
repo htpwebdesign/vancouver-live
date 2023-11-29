@@ -18,6 +18,19 @@
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
         endif;
+
+        if(function_exists ('get_field')){
+            $about_artist = get_field('about_artist');
+            if($about_artist){
+                $performer_tier = get_field('performer_status');
+                if($performer_tier === 'Headliner'){
+                    echo '<div class="artist-desc">';
+                    echo '<p>' . $about_artist . '</p>';
+                    echo '</div>';
+                }
+            }
+        }
+
         ?>
     </div>
 
@@ -25,21 +38,6 @@
         <?php   
         the_post_thumbnail();
         
-        if(function_exists ('get_field')){
-            $about_artist = get_field('about_artist');
-            if($about_artist){
-                $performer_tier = get_field('performer_status');
-                if($performer_tier === 'Headliner'){
-                    if(is_archive()){
-                        $about_artist = substr($about_artist, 0, 200) . '<a href="' . esc_url(get_permalink()) . '"> ...</a>';
-                    };
-                    echo '<div>';
-                    echo '<p>' . $about_artist . '</p>';
-                    echo '</div>';
-                }
-            }
-        }
-
         if(is_singular()){
             if(function_exists('get_field')){
                 $to_archive = get_field('p_single_to_archive', 36);
