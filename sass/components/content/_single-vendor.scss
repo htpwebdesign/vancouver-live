@@ -23,7 +23,13 @@
                 max-width: 100%;
                 object-fit: contain;
                 object-position: center;
+                background-color: $color__background-screen;
+
+                @media(min-width:75em) {
+                    max-height: 50vh;
+                }
             }
+           
         }
     }
 

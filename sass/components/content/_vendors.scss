@@ -47,6 +47,11 @@
 
     article{
 
+        @media(min-width:100em) {
+            padding-left: 6rem;
+            padding-right: 6rem;
+        }
+
         @media(min-width:75em) {
             max-width: 75rem;
             margin: auto;
@@ -65,70 +70,64 @@
 
         }
     };
-
-    .article-container{
-        @media(min-width:100em) {
-            padding-left: 6rem;
-            padding-right: 6rem;
-        }
-    }
+    
 
     .tier-1{
-        .article-container{
+       
             @media(min-width:100em) {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
+                .article-container{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                }
                
             }
-        }
+        
 
         article{
             @media(min-width:50em) {
                 max-width: 80vw;
                 margin: auto;
             }
-            .article-content{
+           
             padding: 1rem;
             display:grid;
             gap: 2rem;
-            }
+            
 
             &:nth-child(odd){
-                .article-content{
-                    grid-template-columns: 2fr 1fr; 
-                }
+              
+                 grid-template-columns: 2fr 1fr; 
+                
 
                 @media(min-width: 50em){
                     grid-template-columns: 1fr 2fr;
 
-                    .article-content{
                         grid-template-columns: 1fr 2fr;
                         .entry-content{
                             grid-column-start: 1;
                             grid-row-start: 1;
                         }
-                        .vendor-text{
+                        .article-content{
                             grid-column-start: 2;
                         }
                     }
-                }
+                };
 
-            };
 
             &:nth-child(even){
                
-                .article-content{
+                
                     grid-template-columns: 1fr 2fr;
                     .entry-content{
                         grid-column-start: 1;
                         grid-row-start: 1;
                     }
-                    .vendor-text{
+                    .article-content{
                        
                         grid-column-start: 2;
                         color: white;
                     }
-                }
+                
 
             };
 

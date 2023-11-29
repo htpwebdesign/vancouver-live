@@ -39,12 +39,6 @@
          endif;
         ?>
         </div>
-        <div 
-        class="entry-content">
-            <?php 
-            the_post_thumbnail();  
-            ?>
-        </div>
          <?php
         if(is_single()):
                 echo '<div class="vendor-desc">';
@@ -76,6 +70,12 @@
             endif;
             ?>
     </div>
+    <div 
+        class="entry-content">
+            <?php 
+            the_post_thumbnail();  
+            ?>
+        </div>
 </article>
 
 <?php
