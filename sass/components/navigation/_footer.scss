@@ -1,4 +1,8 @@
-
+.site-footer#colophon {
+    &>section {
+        margin-top: 0;
+    }
+}
 
 .site-vendor-showcase {
     display: flex;
@@ -7,19 +11,29 @@
     padding-bottom: 40px;
     @include media("desktop") {
         flex-direction: row;
+        align-items: baseline;
+        justify-content: space-evenly;
     }
     .vendor-cta {
         width: 80%;
+        @include media("desktop") {
+            width: 40%;
+        }
         display: flex;
         flex-direction: column;
         align-items: center;
         p, h2 {
-            text-align: justify;
+            @include media("tablet") {
+                text-align: justify;
+            }
         }
     }
     .our-partners {
         text-align: center;
         width: 80%;
+        @include media("desktop") {
+            width: 40%;
+        }
         h2 {
             margin: 0;
         }
@@ -42,7 +56,13 @@
         margin: auto;
         padding-top: 20px;
         h2 {
-            font-size: 2.2em;
+            font-size: 1.3rem;
+            @include media("tablet-large") {
+                font-size: 1.8rem;
+            }
+            @include media("desktop") {
+                font-size: 2.2rem;
+            }
             margin: 0;
             color: $color__text-title;
         }
@@ -55,13 +75,18 @@
         
     }
     .nav-social-media {
-        
+        @include media("desktop") {
+            position: absolute;
+            right: 20px;
+            top: 30px;
+        }
         h2 {
             color: $color__text-white;
-            font-size: 1.5em;
+            font-size: 1.2em;
+            @include media("tablet-large") {
+                font-size: 1.5rem;
+            }
             text-align: center;
-            
-            
         }
         nav {
             display: flex;
@@ -80,11 +105,18 @@
 .site-copyright {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 10px;
     background-color: $color__background-screen;
     p {
         color: $color__text-white;
         margin: 10px 0 5px;
+        &.copyright {
+            order: 2;
+            @include media("tablet-large") {
+                order: 0;
+            }
+        }
         a {
             color: $color__text-white;
             font-weight: bold;
