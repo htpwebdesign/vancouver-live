@@ -23,17 +23,18 @@
   justify-content: center;
 }
 
-.entry-title {
+ .entry-title {
   display: flex;
   position: absolute;
   color: $color__text-title ;
   margin-top: 8rem;
-  margin-left: 6rem;
+  margin-left: 3rem;
   font-size: 2rem;
   z-index: 9999;
   font-weight: $title-font-weight;
   line-height: 2.5rem;
   text-align: left;
+  width: 17rem;
 
 }
 
@@ -128,6 +129,7 @@
     margin-left: 5rem;
     font-weight: $title-font-weight;
     line-height: 3.5rem;
+    width: 23rem;
   }
 
   
@@ -150,6 +152,7 @@
     margin-left: 9rem;
     font-weight: $title-font-weight;
     line-height: 4.5rem;
+    width: 38rem;
   }
 
   .home .banner-content-text .sub-header-s {

@@ -19,7 +19,7 @@ get_header();
 
     <?php
     echo '<section class="buttons-sec">';
-	echo '<button class="ticket-button"><a href="' . get_permalink(22) . '" >Tickets</a></button>';
+	echo '<button class="ticket-button"><a href="' . get_permalink(16) . '" >Tickets</a></button>';
 	echo '<button class="schedule-button"><a href="' . get_permalink(34) . '" >Schedule</a></button>';
     echo '</section>';
 
