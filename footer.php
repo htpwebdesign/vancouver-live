@@ -74,7 +74,7 @@
 					<?php gravity_form( 1, false, false, false, false, true ); ?>
 				</div>
 				<div class="nav-social-media">
-					<p><?php the_field('social_media_heading', 'option'); ?></p>
+					<h2><?php the_field('social_media_heading', 'option'); ?></h2>
 					<nav>
 						<a href="<?php the_field('facebook', 'option'); ?> "><?php get_template_part( 'icons/facebook' ); ?></a>
 						<a href="<?php the_field('twitter', 'option'); ?> "><?php get_template_part( 'icons/twitterx' ); ?></a>
