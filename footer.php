@@ -54,16 +54,7 @@
 			</section><!-- .site-vendor-showcase -->
 			<?php 
 		}
-		else {
-			?>
-			<section class="site-vendor-showcase">
-				<div>
-					<h2><?php the_field('vendor_showcase_heading', 'option'); ?></h2>
-					<?php gravity_form( 2, false, false, false, false, true ); ?>
-				</div>
-			</section><!-- .site-vendor-showcase -->
-			<?php 
-		}
+	
 		?>
 			 
 		
