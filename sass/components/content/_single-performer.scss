@@ -1,0 +1,32 @@
+.single-vanlive-performer{
+    article{
+        display: flex;
+        flex-direction: column-reverse;
+        gap:0;
+        .entry-title{
+            margin: 0;
+        }
+
+        .entry-content{
+            margin: 0;
+
+            img{
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    h1{
+        color: $color__text-title;
+        width: 100%;
+    }
+
+    p{
+        padding: 1rem;
+        margin: 0;
+        color: $color__background-screen;
+        font-weight: bold;
+    }
+   
+}

@@ -16,6 +16,7 @@
         margin-top: 10vh;
         background-color: $color__background-screen;
 
+
         .section-header{
             background-color: white;
             display: flex;
@@ -34,16 +35,23 @@
             background-color: white;
             padding: 1rem;
             p{
-                margin: 0;
+                margin: auto;
                 color: $color__background-screen;
                 text-align: center;
                 font-weight: bold;
+                max-width: 50em;
             }
         }
     }
 
 
     article{
+
+        @media(min-width:75em) {
+            max-width: 75rem;
+            margin: auto;
+        }
+
         h2{
             
             a{
@@ -58,12 +66,19 @@
         }
     };
 
+    .article-container{
+        @media(min-width:100em) {
+            padding-left: 6rem;
+            padding-right: 6rem;
+        }
+    }
+
     .tier-1{
         .article-container{
             @media(min-width:100em) {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                padding: 1rem;
+               
             }
         }
 
