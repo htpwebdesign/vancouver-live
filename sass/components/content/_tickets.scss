@@ -23,7 +23,6 @@ ul.products li.product .button {
     color: $color__background-screen;
     border: none;
     font-size: 1.2rem;
-    margin: 2rem;
     width: 11rem;
 }
 
@@ -108,3 +107,91 @@ ul.products li.product .button {
         margin: 0 1.25rem !important;
       }
   }
+
+
+@include media("desktop") {
+  .woocommerce-product-gallery {
+    width: 100%;
+  }
+}
+
+.woocommerce-product-gallery__image--placeholder {
+  display: flex;
+  justify-content: center;
+}
+
+.related.products {
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 0;
+  }
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include media("desktop") {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    & > a.button {
+      margin: auto;
+    }
+  }
+
+
+.single-product {
+  .entry-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    h1 {
+      margin-top: 0;
+    }
+    @include media("desktop") {
+      width: 48%;
+    }
+    .single_add_to_cart_button {
+      margin: auto;
+    }
+  }
+}
+
+.woocommerce-LoopProduct-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabs a {
+  text-align: center;
+}
+
+#tab-description {
+  h2, p {
+    text-align: center;
+  }
+}
+
+.woocommerce-message {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  .button {
+    width: 20%;
+    margin-right: 20px;
+  }
+}
+
+.coupon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  input {
+    width: 80%;
+    font-size: 1.5rem;
+  }
+}
