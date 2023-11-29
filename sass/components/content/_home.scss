@@ -34,6 +34,8 @@
   width: 20rem;
   font-weight: $title-font-weight;
   line-height: 2.5rem;
+  text-align: left;
+
 }
 
   .entry-content {
@@ -41,70 +43,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
-
-    #sub-header-p{
-      position: absolute;
-      color: $color__text-white;
-      z-index: 9999;
-      margin-top: 10rem;
-      font-size: .9rem;
-      width: 15rem;
-      margin-top: 4rem;
-      margin-left: 2rem;
-    }
-
-  }
-
-  .wp-block-columns.is-layout-flex.wp-container-core-columns-layout-3.wp-block-columns-is-layout-flex {
-    margin: 1rem;
-    background-color: $color__background-screen;
-    color: $color__text-white;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .wp-block-image img {
-    height: 20rem;
-    padding-right: 2rem;
-  }
-
-  .wp-block-columns.is-layout-flex.wp-container-core-columns-layout-1.wp-block-columns-is-layout-flex,
-  .wp-block-columns.is-layout-flex.wp-container-core-columns-layout-2.wp-block-columns-is-layout-flex {
-    padding-top: 2rem;
-    padding-left: 2rem;
-    text-align: justify;
-
-    p{
-      padding-right: 2rem;
-    }
-  }
-
-  #primary {
-    justify-content: center;
-    align-items: center;
-  }
-
-  .wp-block-column.is-layout-flow.wp-block-column-is-layout-flow h2{
-    color: $color__text-title ;
-  }
-
-  .wp-block-button__link{
-    margin: 0 auto;
-    background-color: $color__background-button;
-    color: $color__text-black;
-    border-radius: 0;
-    margin-top: 2rem;
-    font-weight: 600;
-  }
-
-  body .is-layout-flex {
-    justify-content: center;
-
-    .wp-block-button{
-      margin-right: 1.5rem;
-    }
-
   }
 
   .buttons-sec {
@@ -116,18 +54,31 @@
     top: 28rem;
     width: 100%;
 
+
     button{
       border: none;
       padding: 1rem 2rem;
       font-size: .9rem;
-      width: 7rem;
       border-radius:0;
       font-weight: $title-font-weight;
+
+      a{
+        text-decoration: none;
+        color: $color__background-screen;
+      }
     }
 
-    .schedule-button{
+    .schedule-button {
       background-color: $color__text-black;
-      color: $color__background-button;
+
+      a{
+        color: $color__background-button;
+      }
+    }
+
+    .schedule-button:hover{
+      background-color: $color__link-hover;
+      color: $color__background-screen;
     }
   }
 
@@ -139,143 +90,58 @@
     width: 15rem;
     top: 20rem;
     margin-left: 1rem;
-    font-size: .8rem;
   }
 
-  @media  (min-width: 400px) and (max-width: 900px){
-
-
-
-    .wp-block-image img {
-      padding-right: 2.5rem;
-      height: 25rem;
-      width: 25rem;
-      margin: 0 auto;
-    }
-
-    .wp-block-image {
-      display: flex;
-      justify-content: center;
-    }
-
-    .wp-block-column.is-layout-flow.wp-block-column-is-layout-flow {
-      max-width: 90%;
-      margin: 0 auto;
-    }
+  .banner-content-text{
+    display: flex;
+    justify-content: center;
   }
 
-  @media  (min-width: 1300px){
-    .buttons-sec {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: right;
-      z-index: 22;
-      position: absolute;
-      top: 20rem;
-      width: 100%;
-      right: 20rem;
-    }
-
-    
   }
 
   @media  (min-width: 600px) and (max-width: 1000px){
 
-    .entry-content{  
-      justify-content: left;
-      
-      #sub-header-p{
-        position: absolute;
-        color: $color__text-white;
-        z-index: 9999;
-        margin-left: 5rem;
-        margin-top: 7rem;
-        font-size: 1rem;
-        width: 20rem;
-      }
-    }
-  
-    .entry-header{
-      justify-content: left;
-    }
-  
-    .entry-title {
-      display: flex;
-      position: absolute;
-      color: $color__text-title ;
-      font-size: 3rem;
-      margin-top: 8rem;
-      z-index: 9999;
-      margin-left: 5rem;
-      width: 30rem;
-      font-weight: $title-font-weight;
-      line-height: 3.5rem;
-    }
-
-    .wp-block-columns.is-layout-flex.wp-container-core-columns-layout-3.wp-block-columns-is-layout-flex {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .wp-block-image img {
-      padding-right: 2.5rem;
-      height: 25rem;
-      width: 25rem;
-      margin: 0 auto;
-    }
-
-
-    .wp-block-column.is-layout-flow.wp-block-column-is-layout-flow {
-      max-width: 80%;
-      margin: 0 auto;
-    }
-
-    .sub-header-s {
-      z-index: 22;
-      width: 21rem;
-      top: 21rem;
-      font-size: 1rem;
-      margin-left: 5.5rem;
-    }
-
-    #primary {
-      display: flex;
-      justify-content: left;
-      align-items: center;
-    }
-
-
-}
-
-
-
-@media  (min-width: 1001px) {
-
-
-    .entry-content{  
-    
-    #sub-header-p{
-      position: absolute;
-      color: $color__text-white;
-      z-index: 9999;
-      margin-left: -62rem;
-      margin-top: -35rem;
-      font-size: 1.2rem;
-      width: 26rem;
-    }
-
-    .wp-block-buttons{
-      position: absolute;
-      z-index: 999;
-    }
-
-  }
-
-  .entry-header{
+  .home .entry-header {
     justify-content: left;
   }
 
-  .entry-title {
+  .home .banner-content-text {
+    justify-content: left;
+    margin-left: 5rem;
+  }
+
+  .home .sub-header-s {
+    z-index: 22;
+    width: 20rem;
+    top: 21rem;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+
+  .home .entry-title {
+    display: flex;
+    position: absolute;
+    color: $color__text-title ;
+    font-size: 3rem;
+    margin-top: 8rem;
+    z-index: 9999;
+    margin-left: 5rem;
+    width: 30rem;
+    font-weight: $title-font-weight;
+    line-height: 3.5rem;
+  }
+
+  
+}
+
+@media  (min-width: 1001px) {
+
+  .home .entry-header{
+    display: flex;
+    justify-content: left;
+  }
+
+  .home .entry-title {
     display: flex;
     position: absolute;
     color: $color__text-title ;
@@ -288,47 +154,201 @@
     line-height: 4.5rem;
   }
 
+  .home .banner-content-text .sub-header-s {
+    z-index: 22;
+    width: 28rem;
+    font-size: 1.1rem;
+    top: 22rem;
+    left: 9rem;
+  }
 
-  .wp-block-image img {
-    padding-right: 0rem;
-    height: 25rem;
-    width: 20rem;
+  .home .buttons-sec {
+    justify-content: center;
+    top: 21rem;
+    left: 20rem;
+  }
+
+  .home .buttons-sec button{
+    padding: 1rem 3rem;
+  }
+}
+
+// .........Event Section.......
+
+.events-home {
+  display: flex;
+  width: 100%;
+  background-color: $color__background-screen;
+  padding: 1rem 2rem;
+  color: $color__text-white;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.event-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem ;
+
+  h2{
+    font-size: 1.8rem;
+    color: $color__text-title;
+    font-weight: 400;
+  }
+
+  p{
+    text-align: justify;
+  }
+
+  a {
+    margin: 0 auto;
+    color: $color__background-screen;
+    background-color: $color__background-button;
+    font-weight: 600;
+    padding: .5rem 1rem;
+    text-decoration: none;
+  }
+
+  a:hover{
+    color: $color__text-white;
+    background-color: $color__link-hover;
+  }
+}
+
+.second-event-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem ;
+
+  h2{
+    font-size: 1.8rem;
+    color: $color__text-title;
+    font-weight: 400;
+  }
+
+  p{
+    text-align: justify;
+  }
+
+  a {
+    margin: 0 auto;
+    color: $color__background-screen;
+    background-color: $color__background-button;
+    font-weight: 600;
+    padding: .5rem 1rem;
+    text-decoration: none;
+  }
+
+  a:hover{
+    color: $color__text-white;
+    background-color: $color__link-hover;
+  }
+}
+
+@media  (min-width: 600px) and (max-width: 1000px){
+
+  .events-home {
+    width: 80%;
     margin: 0 auto;
   }
 
-  .wp-block-columns.is-layout-flex.wp-container-core-columns-layout-3.wp-block-columns-is-layout-flex {
-    margin: 1rem 3rem;
+  .event-section, .second-event-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows:  1fr;
+    justify-items: center;
+    padding: 1rem 0;
 
-  }
+    img{
+      grid-column: 1;
+      width: 15rem;
+      height: 35vh;
+    }
 
-  .wp-block-columns.is-layout-flex.wp-container-core-columns-layout-2.wp-block-columns-is-layout-flex {
-    padding-left: 0;
-  }
+    h2{
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: left;
+      padding-left: 1rem;
+    }
 
-  button{
-    border: none;
-    padding: 1.2rem 2.2rem;
-    font-size: 1.2rem;
-    width: 10rem;
-    border-radius:0;
-    font-weight: $title-font-weight;
-  }
+    a{
+      grid-column: 2;
+      grid-row: 1;
+      align-self: end;
+    }
 
-  .sub-header-s {
-    width: 47rem;
-    top: 21rem;
-    left: 9rem;
-    font-size: 1.1rem;
-    margin-left: 0;
-    margin-top: 2rem;
-  }
-
-  .buttons-sec button {
-    padding: 1.2rem 2.2rem;
-    font-size: 1rem;
-    width: 9rem;
-
+    p{
+      grid-row: 1;
+      grid-column: 2;
+      align-self: center;
+      margin-right: 1rem;
+      margin-left: .5rem;
+      padding-left: .5rem;
+    }
   }
 
 }
+
+@media  (min-width: 1001px) {
+
+  .events-home {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows:  1fr;
+    width: 85%;
+    padding: 1rem 0;
+    margin: 0 auto;
+
+
+    .second-event-section{
+      grid-column: 2;
+    }
+
+    .event-section{
+      grid-column: 1;
+    }
+  }
+
+  .event-section, .second-event-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows:  1fr;
+    justify-items: center;
+    padding: 1rem 2.5rem;
+    gap: 0;
+
+    img{
+      grid-column: 1;
+      width: 15rem;
+      height: 35vh;
+      margin-right: 1rem;
+    }
+
+    h2{
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: left;
+      margin-top: 0;
+    }
+
+    a{
+      grid-column: 2;
+      grid-row: 1;
+      align-self: end;
+    }
+
+    p{
+      grid-row: 1;
+      grid-column: 2;
+      align-self: center;
+      padding-left: .5rem;
+    }
+  }
+
+  .second-event-section{
+    padding-left: 0;
+  }
 }
