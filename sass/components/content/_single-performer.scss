@@ -1,23 +1,23 @@
-.single-vanlive-performer{
-    main{
+.single-vanlive-performer {
+    main {
         display: flex;
         flex-direction: column;
         margin-bottom: 2rem;
     }
 
-    article{
+    article {
         display: flex;
         flex-direction: column-reverse;
-        gap:0;
-       
-        .entry-title{
+        gap: 0;
+
+        .entry-title {
             margin: 0;
         }
 
-        .entry-content{
+        .entry-content {
             margin: 0;
-         
-             img{
+
+            img {
                 max-height: 30vh;
                 height: auto;
                 width: 100%;
@@ -25,49 +25,48 @@
                 object-fit: contain;
                 object-position: center;
                 background-color: $color__background-screen;
-         
-                
-                @media(min-width:75em) {
+
+                @include media(tablet-large) {
                     max-height: 50vh;
                 }
             }
         }
     }
 
-    h1{
+    h1 {
         color: $color__text-title;
         width: 100%;
     }
 
-    p{
+    p {
         padding: 1rem;
         margin: 0;
         color: $color__background-screen;
         font-weight: bold;
     }
 
-
-    .to-archive{
+    .to-archive {
         background-color: $color__background-button;
         text-decoration: none;
         padding: 1rem;
         color: white;
         margin: auto;
     }
-    .navigation{
+
+    .navigation {
         margin: 2rem;
     }
-   
-    .artist-desc{
+
+    .artist-desc {
         max-width: 50rem;
         margin: auto;
 
-        .to-sched{
+        .to-sched {
             text-align: center;
             padding: 0;
         }
 
-        .or{
+        .or {
             text-align: center;
             margin: auto;
         }
