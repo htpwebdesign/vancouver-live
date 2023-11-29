@@ -1,12 +1,25 @@
+
+
 .site-vendor-showcase {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-bottom: 40px;
+    @include media("desktop") {
+        flex-direction: row;
+    }
     .vendor-cta {
-        width: 38%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p, h2 {
+            text-align: justify;
+        }
     }
     .our-partners {
         text-align: center;
-        width: 58%;
+        width: 80%;
         h2 {
             margin: 0;
         }
@@ -42,19 +55,21 @@
         
     }
     .nav-social-media {
-        position: absolute;
-        top: 30px;
-        right: 20px;
-        p {
+        
+        h2 {
             color: $color__text-white;
-            font-size: 1.3em;
-            margin: 10px 0;
+            font-size: 1.5em;
+            text-align: center;
+            
+            
         }
         nav {
             display: flex;
             justify-content: space-evenly;
             background-color: white;
             border-radius: 10px;
+            width: 50%;
+            margin: auto;
             a {
                 height: 50px;
             }

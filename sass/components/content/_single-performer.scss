@@ -1,0 +1,75 @@
+.single-vanlive-performer{
+    main{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    article{
+        display: flex;
+        flex-direction: column-reverse;
+        gap:0;
+       
+        .entry-title{
+            margin: 0;
+        }
+
+        .entry-content{
+            margin: 0;
+         
+             img{
+                max-height: 30vh;
+                height: auto;
+                width: 100%;
+                max-width: 100%;
+                object-fit: contain;
+                object-position: center;
+                background-color: $color__background-screen;
+         
+                
+                @media(min-width:75em) {
+                    max-height: 50vh;
+                }
+            }
+        }
+    }
+
+    h1{
+        color: $color__text-title;
+        width: 100%;
+    }
+
+    p{
+        padding: 1rem;
+        margin: 0;
+        color: $color__background-screen;
+        font-weight: bold;
+    }
+
+
+    .to-archive{
+        background-color: $color__background-button;
+        text-decoration: none;
+        padding: 1rem;
+        color: white;
+        margin: auto;
+    }
+    .navigation{
+        margin: 2rem;
+    }
+   
+    .artist-desc{
+        max-width: 50rem;
+        margin: auto;
+
+        .to-sched{
+            text-align: center;
+            padding: 0;
+        }
+
+        .or{
+            text-align: center;
+            margin: auto;
+        }
+    }
+}
