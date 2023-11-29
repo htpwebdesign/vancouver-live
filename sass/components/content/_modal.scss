@@ -1,0 +1,54 @@
+#myModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    margin: auto;
+    top: 2rem;
+    width: 80vw;
+  }
+  
+  .closeModal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: $color__background-screen;
+  }
+
+  .vendor-signup{
+    margin: auto;
+    text-align: center;
+    padding: 5rem;
+    width: 100%;
+    h3{
+        color: $color__background-screen;
+    }
+    button{
+        font-weight: bold;
+        border-radius: 0;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+  }
+
+  .gform_confirmation_message_2{
+    color: $color__background-screen;
+  }
+  

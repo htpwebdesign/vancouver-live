@@ -111,9 +111,44 @@ get_header();
 			echo '</section>';
 			wp_reset_postdata();
 		}
-		
-			the_posts_navigation();
+		?>
+		<div class="vendor-signup">
+			<h3>Want to become a vendor?</h3>
+			<button id="openModalBtn">Signup Here!</button>
+		</div>
+		<div id="myModal" class="modal-container">
+		<div class="modal-content">
+			<span class="closeModal">&times;</span>
+			<?php gravity_form( 2, false, false, false, false, true ); ?>
+		</div>
+		</div>
 
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		<script>
+		jQuery(document).ready(function ($) {
+			// Open modal on button click
+			$('#openModalBtn').on('click', function () {
+			// Show the modal
+			$('#myModal').fadeIn();
+			});
+
+			// Close modal on overlay click
+			$('#myModal').on('click', function (event) {
+			if ($(event.target).is('#myModal')) {
+				// Hide the modal
+				$(this).fadeOut();
+			}
+			});
+
+			// Close modal on close button click
+			$('.closeModal').on('click', function () {
+			// Hide the modal
+			$('#myModal').fadeOut();
+			});
+		});
+		</script>
+
+		<?php
 		else :
 
 		get_template_part( 'template-parts/content', 'none' );
