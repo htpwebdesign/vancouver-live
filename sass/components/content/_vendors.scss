@@ -47,24 +47,12 @@
 
     article{
 
-        @media(min-width:100em) {
-            padding-left: 6rem;
-            padding-right: 6rem;
-        }
-
-        @media(min-width:75em) {
-            max-width: 75rem;
-            margin: auto;
-        }
-
         h2{
-            
             a{
                 color: $color__text-title;
             }    
         };
 
-        
         .vendor-text{
             font-weight:700;
 
@@ -73,8 +61,17 @@
     
 
     .tier-1{
+
+        .article-container{
+            @include media("desktop-large") {
+                padding-left: 6rem;
+                padding-right: 6rem;
+            }
+
        
-            @media(min-width:100em) {
+        }
+       
+        @include media("desktop-large") {
                 .article-container{
                     display: grid;
                     grid-template-columns: 1fr 1fr;
@@ -84,7 +81,7 @@
         
 
         article{
-            @media(min-width:50em) {
+            @include media("tablet-large") {
                 max-width: 80vw;
                 margin: auto;
             }
@@ -99,7 +96,7 @@
                  grid-template-columns: 2fr 1fr; 
                 
 
-                @media(min-width: 50em){
+                 @include media("tablet-large"){
                     grid-template-columns: 1fr 2fr;
 
                         grid-template-columns: 1fr 2fr;
@@ -143,7 +140,7 @@
                     margin: 0;
                 }
 
-                @media(min-width: 37.5rem) {
+                @include media("tablet") {
                     -webkit-line-clamp: none;
                     display: block;
                 }
@@ -157,7 +154,7 @@
                     object-position: center;
                     max-height: 50vh;
 
-                    @media(min-width:50em){
+                    @include media("tablet-large"){
                         max-height: 33.33vh;
                     }
                 }
@@ -172,11 +169,11 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
 
-            @media(min-width:37.5em){
+            @include media("tablet"){
                 grid-template-columns: 1fr 1fr 1fr 1fr;
             }
 
-            @media(min-width: 50em) {
+            @include media("tablet-large") {
                 max-width: 37.5rem;
                 margin: auto;
             }
@@ -215,7 +212,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
 
-            @media(min-width: 50em) {
+            @include media("tablet-large") {
                 max-width: 37.5rem;
                 margin: auto;
             }
