@@ -31,10 +31,11 @@
             background-color: white;
             padding: 1rem;
             p{
-                margin: 0;
                 color: $color__background-screen;
                 text-align: center;
                 font-weight: bold;
+                margin: auto;
+                max-width: 50em;
             }
         }
 
@@ -95,6 +96,13 @@
             @media(min-width:50em) {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                align-items:flex-start;
+
+                article{
+                    min-width: 100%;
+                    max-width: 100%;
+                    height: auto;
+                }
             }
             @media(min-width:100em) {
                 display: grid;
@@ -117,10 +125,12 @@
                 img{
                     object-fit: contain;
                     object-position: center;
-                    max-height: 50vh;
-
+                   
+                    height: auto;
+                    width:fit-content;
+                    max-width: 100%;
                     @media(min-width:50em){
-                        max-height: 33.33vh;
+                        max-height: 20vh;
                     }
                 }
             }
@@ -133,8 +143,10 @@
             -webkit-line-clamp: 9;
             display: -webkit-box;
             overflow: hidden;
+
             p{
                 margin: 0;
+                
             }
 
             @media(min-width: 37.5rem) {
@@ -153,13 +165,26 @@
         .performer-articles{
             display: grid;
             grid-template-columns: 1fr 1fr;
+
+            @media(min-width: 50em) {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
         }
 
         .performer-text h2{
             text-align: center;
         }
 
-        
+        article .entry-content{
+            display: flex;
+            justify-content: center;
+            img{
+                max-height: 25vh;
+                max-width: 100%;
+                width:fit-content;
+                margin: auto;
+            }
+        }
     }
 
     .tertiary{
