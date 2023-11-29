@@ -18,6 +18,76 @@ get_header();
 	<main id="primary" class="site-main">
 
 		<?php
+
+		echo'<div class="about-page-wrapper">';
+
+		$about_section = get_field('about_hero_section');
+
+		if ($about_section) {
+	
+			foreach ($about_section as $section) {
+				$title = $section['hero_section_title'];
+				$media = $section['hero_section_image'];
+				$text = $section['hero_section_text'];
+				
+				?>
+				<section class="about-section-hero">
+						<h2><?php echo $title; ?></h2>
+						<div class="about-image-banner">
+						<img src="<?php echo esc_url($media['url']); ?>" alt="<?php echo esc_attr($media['alt']); ?>">
+						</div>
+						<p><?php echo $text; ?></p>
+				</section>
+				<?php
+			}
+		}
+
+		$History_section = get_field('history_and_mission');
+
+		if ($History_section) {
+	
+			foreach ($History_section as $section) {
+
+				$title = $section['about_history_title'];
+				$media = $section['about_history_image'];
+				$text = $section['about_history_text'];
+				
+				?>
+				<section class="History-section">
+						<h2><?php echo $title; ?></h2>
+						<img src="<?php echo esc_url($media['url']); ?>" alt="<?php echo esc_attr($media['alt']); ?>">
+						<p><?php echo $text; ?></p>
+				</section>
+				<?php
+			}
+		}
+
+		$public_transit = get_field('public_transit');
+
+		if ($public_transit) {
+			foreach ($public_transit as $section) {
+				$title = $section['public_transit_title'];
+				$text = $section['public_transit_text'];
+		
+				?>
+				<section class="public_transit">
+					<h2><?php echo $title; ?></h2>
+					<p><?php echo $text; ?></p>
+		
+					<?php
+					$map_id = 1;
+		
+					$shortcode = '[wpgmza id="' . esc_attr($map_id) . '"]';
+		
+					echo do_shortcode($shortcode);
+					?>
+				</section>
+				<?php
+			}
+		}
+
+		echo'</div>';
+
 		while ( have_posts() ) :
 			the_post();
 			
@@ -29,9 +99,9 @@ get_header();
 			endif;
 
 		endwhile; // End of the loop.
+
 		?>
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
