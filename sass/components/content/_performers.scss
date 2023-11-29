@@ -120,7 +120,7 @@
                     height: auto;
                     width: fit-content;
                     max-width: 100%;
-
+                    max-height: 50vh;
                     @include media(desktop) {
                         max-height: 20vh;
                     }
@@ -153,9 +153,15 @@
         .performer-articles {
             display: grid;
             grid-template-columns: 1fr 1fr;
-
+            row-gap: 1rem;
             @include media(tablet) {
                 grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            article{
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: flex-end;
             }
         }
 
