@@ -49,11 +49,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     z-index: 22;
     position: absolute;
     top: 28rem;
-    
-    
+    width: 100%;
 
 
     button{
@@ -132,6 +132,12 @@
     width: 23rem;
   }
 
+  .home .buttons-sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   
 }
 
@@ -166,7 +172,7 @@
   .home .buttons-sec {
     justify-content: center;
     top: 21rem;
-    right: 20rem;
+    left: 20rem;
   }
 
   .home .buttons-sec button{
