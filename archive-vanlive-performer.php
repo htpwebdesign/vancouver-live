@@ -106,7 +106,7 @@ get_header();
 				echo '</section>';
 				wp_reset_postdata();
 			}
-				the_posts_navigation();
+				
 
 		else :
 

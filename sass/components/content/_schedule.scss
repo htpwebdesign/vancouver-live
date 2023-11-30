@@ -88,7 +88,6 @@
     }
 
     .schedule-container{
-        max-height:100vh;
         height: auto;
     }
 
@@ -98,6 +97,9 @@
         max-height: 100%;
         height:min-content;
         background-position: center;
+        @include media(1000px){
+            background-position: inherit;
+        }
         background-size: cover;
         background-repeat: no-repeat;
         z-index: -1;
@@ -115,5 +117,14 @@
         z-index: 10;
      
     }
+
+    .fixedElement {
+        position:sticky;
+        top: 0;
+        width:100%;
+        z-index:100;
+        background-color: white;
+    }
+
    
 }

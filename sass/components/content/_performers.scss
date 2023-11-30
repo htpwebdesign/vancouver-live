@@ -122,7 +122,7 @@
                     max-width: 100%;
                     max-height: 50vh;
                     @include media(desktop) {
-                        max-height: 20vh;
+                        max-height: 40vh;
                     }
                 }
             }
@@ -133,7 +133,7 @@
             -webkit-line-clamp: 9;
             display: -webkit-box;
             overflow: hidden;
-
+           
             p {
                 margin: 0;
             }
@@ -161,7 +161,7 @@
             article{
                 display: flex;
                 flex-direction: column-reverse;
-                justify-content: flex-end;
+                justify-content: space-between;
             }
         }
 
@@ -192,6 +192,7 @@
         .performer-articles {
             display: flex;
             justify-content: space-around;
+            flex-wrap: wrap;
         }
 
         article {
