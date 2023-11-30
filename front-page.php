@@ -102,9 +102,75 @@ get_header();
 				}
 				?>
 			</section>
+
             <?php
         }
 	echo'</div>';
+
+	echo'<section class="performer-vendor-wrapper">';
+
+		$performer_sections = get_field('performer_section');
+		foreach ($performer_sections as $section) {
+
+			$title = $section['performer_section_title'];
+			$media = $section['performer_section_image'];
+			$text = $section['performer_section_text'];
+			$links = $section['performer_section_link'];
+
+			?>
+			<section class="home-performer-section">
+				<h2><?php echo $title; ?></h2>
+					
+					<img src="<?php echo esc_url($media['url']); ?>" alt="<?php echo esc_attr($media['alt']); ?>">
+					<p><?php echo $text; ?></p>
+
+					<?php
+
+				if (is_array($links) && !empty($links)) {
+					$first_link = reset($links);
+					?>
+					<a href="<?php echo esc_url($first_link); ?>">Read More</a>
+					<?php
+				}
+				?>
+					
+
+			</section>
+
+			<?php
+		}
+
+		$vendor_sections = get_field('vendor_section');
+		foreach ($vendor_sections as $section) {
+
+			$title = $section['vendor_section_title'];
+			$media = $section['vendor_section_image'];
+			$text = $section['vendor_section_text'];
+			$links = $section['vendor_section_link'];
+
+			?>
+			<section class="home-vendor-section">
+				<h2><?php echo $title; ?></h2>
+					
+					<img src="<?php echo esc_url($media['url']); ?>" alt="<?php echo esc_attr($media['alt']); ?>">
+					<p><?php echo $text; ?></p>
+
+					<?php
+
+				if (is_array($links) && !empty($links)) {
+					$first_link = reset($links);
+					?>
+					<a href="<?php echo esc_url($first_link); ?>">Read More</a>
+					<?php
+				}
+				?>
+			</section>
+
+			<?php
+		}
+	echo'</section>';
+
+	
     ?>
 
 </main><!-- #main -->
