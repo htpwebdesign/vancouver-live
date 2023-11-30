@@ -36,7 +36,7 @@
     font-weight: 600;
     padding-top: .5rem;
     padding-bottom: .5rem;
-
+    padding-left: 2rem;
 }
 
 #site-navigation {
@@ -44,7 +44,6 @@
     justify-content: left;
     align-items: center;
     text-align: left;
-    z-index: 100;
     position: relative;
     button{
         
@@ -73,7 +72,7 @@
     width: 100%;
     position: absolute;
     z-index: 100;
-
+    top: 0;
     ul{
         align-items: center;
     }
@@ -85,8 +84,7 @@
     .menu-item-190 {
         a{
             background-color: $color__background-button;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
+            
             &:hover{
                 background-color: $color__background-screen;
                 color: white;
@@ -311,21 +309,29 @@
 @keyframes slideInAnimation {
     from {
         transform: translateY(-100%);
+        opacity: 0;
     }
     to {
         transform: translateY(0);
+        opacity: 1;
     }
 }
 
 @keyframes slideOutAnimation {
     from {
         transform: translateY(0);
+        opacity: 1;
     }
     to {
         transform: translateY(-100%);
+        opacity: 0;
     }
 }
 
 .menu-header-container .menu.toggled{
+    display: block;
+}
+
+.menu-header-container .menu.toggled .sub-menu{
     display: block;
 }
