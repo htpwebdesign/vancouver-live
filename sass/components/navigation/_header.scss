@@ -37,6 +37,12 @@
     padding-top: .5rem;
     padding-bottom: .5rem;
     padding-left: 2rem;
+        
+    @media(min-width:700px) {
+        padding-left: 0;
+        padding-right: 0;
+    } 
+    
 }
 
 #site-navigation {
@@ -85,11 +91,18 @@
         a{
             background-color: $color__background-button;
             
+            @media(min-width:700px) {
+                padding-left: .5rem;
+                padding-right: .5rem;
+            } 
+
             &:hover{
                 background-color: $color__background-screen;
                 color: white;
             }
         }
+
+        
         
     }
 
@@ -169,7 +182,6 @@
 
     .menu-header-container {
         justify-content: right;
-        margin-top: 1rem;
         display: flex;
         align-items: center;
 
