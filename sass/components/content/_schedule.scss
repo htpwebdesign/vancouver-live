@@ -97,7 +97,7 @@
         max-height: 100%;
         height:min-content;
         background-position: center;
-        @include media(1000px){
+        @media(min-width:1000px){
             background-position: inherit;
         }
         background-size: cover;
