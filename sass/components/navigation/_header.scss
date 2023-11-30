@@ -30,7 +30,9 @@
 .main-navigation a {
     color: black;
     font-weight: 600;
-    padding: .5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+
 }
 
 #site-navigation {
@@ -39,6 +41,13 @@
     align-items: center;
     text-align: left;
     z-index: 100;
+
+    button{
+        
+        &:hover{
+            color: $color__background-button;
+        }
+    }
 }
 
 #primary-menu {
@@ -67,7 +76,8 @@
     .menu-item-190 {
         a{
             background-color: $color__background-button;
-            
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
             &:hover{
                 background-color: $color__background-screen;
                 color: white;
@@ -76,8 +86,15 @@
         
     }
 
+    .menu-item-466{
+        a{
+            display: flex;
+        }
+    }
+
     a:hover{
         color: $color__background-button;
+        
     }
 
 }
@@ -91,15 +108,10 @@
 
     li{
         border-bottom: none;
-        background-color: $color__border-input;
         text-align: center;
         padding-top: .5rem;
         margin: 0;
         margin-bottom: .2rem;
-    }
-
-    li:hover{
-        background-color: $color__background-button;
     }
 
     a{
@@ -111,8 +123,7 @@
 .svg-about{
     display: flex;
     width: 1rem;
-    margin: 0;
-    
+    margin: 0; 
 }
 
 #menu-item-183 a{
@@ -121,7 +132,7 @@
 }
 
 
-@media  (min-width: 600px) and (max-width: 1000px){
+@media  (min-width: 700px) and (max-width: 1000px){
 
     .menu-toggle {
         display: none;
@@ -174,7 +185,6 @@
 
         li{
             border-bottom: none;
-            background-color: $color__border-input;
             text-align: center;
             padding-top: 0;
             margin: .2rem;
@@ -257,7 +267,6 @@
 
         li{
             border-bottom: none;
-            background-color: $color__border-input;
             text-align: center;
             padding-top: 0;
             margin: .2rem;
