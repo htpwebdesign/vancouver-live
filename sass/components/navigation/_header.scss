@@ -30,7 +30,7 @@
 .main-navigation a {
     color: black;
     font-weight: 600;
-    
+    padding: .5rem;
 }
 
 #site-navigation {
@@ -62,14 +62,11 @@
     }
     li{
         border-bottom: solid 1px $color__border-input;
-        margin-bottom: 1rem;
-        padding-bottom: .5rem;
     }
 
     .menu-item-190 {
         a{
             background-color: $color__background-button;
-            padding: .5rem;
             
             &:hover{
                 background-color: $color__background-screen;
@@ -113,7 +110,7 @@
 
 .svg-about{
     display: flex;
-    width: 1.5rem;
+    width: 1rem;
     margin: 0;
     
 }
