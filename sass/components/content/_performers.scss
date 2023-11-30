@@ -233,6 +233,39 @@
     }
 }
 
+.performer-button-sec{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    z-index: 22;
+    position: absolute;
+    border: none;
+    top: 23rem;
+    padding: 0;
+      
+
+    button{
+        border: none;
+        font-size: .9rem;
+        border-radius:0;
+        font-weight: $title-font-weight;
+  
+    .cta-performer{
+          text-decoration: none;
+        }
+      }
+}
+
+#performer-page a:hover {
+    background-color: $color__link-hover;
+  }
+
+#performer-page .cta-performer{
+    color: $color__background-screen;
+    padding: .5rem 2.5rem;
+    font-weight: 600;
+}
+
 .page-header .performer-section-hero{
     background-color: none;
     margin-top: 1rem;
@@ -289,14 +322,19 @@
     .performer-section-hero h2{
         font-size: 4rem;
         margin-left: 7rem;
-        top: 12rem;
+        top: 8rem;
         }
     
     .performer-section-hero  p{
         font-size: 1.2rem;
         margin-left: 7rem;
         width: 30rem;
-        top: 16rem;
+        top: 12rem;
         text-align: left;
     }
+
+    .performer-section-hero button{
+        justify-content: center;
+        left: 7rem;
+      }
 }

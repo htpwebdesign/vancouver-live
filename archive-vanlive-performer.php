@@ -30,6 +30,17 @@ get_header();
 								</div>
 								<h2><?php the_sub_field('performers_hero_title'); ?></h2>
 								<p><?php the_sub_field('performers_hero_text'); ?></p>
+								<button class="performer-button-sec">
+								<?php
+									if(function_exists('get_field')){
+										$cta = get_field('performer_cta', 36);
+									
+										if($cta){
+											echo '<a class="cta-performer" href="' . esc_url($cta['url']) . '">' . esc_html($cta['title']) . '</a>';
+										}
+									}
+									?>
+								</button>
 							</section>
 
 						<?php endwhile;

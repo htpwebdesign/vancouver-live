@@ -119,21 +119,22 @@ get_header();
 
 			?>
 			<section class="home-performer-section">
-				<h2><?php echo $title; ?></h2>
-					
-					<img src="<?php echo esc_url($media['url']); ?>" alt="<?php echo esc_attr($media['alt']); ?>">
+				
+				<img src="<?php echo esc_url($media['url']); ?>" alt="<?php echo esc_attr($media['alt']); ?>">
+				<article class="article-wrapper">
+					<h2><?php echo $title; ?></h2>
 					<p><?php echo $text; ?></p>
-
-					<?php
-
-				if (is_array($links) && !empty($links)) {
-					$first_link = reset($links);
-					?>
-					<a href="<?php echo esc_url($first_link); ?>">Read More</a>
-					<?php
-				}
-				?>
 					
+					<?php
+
+					if (is_array($links) && !empty($links)) {
+						$first_link = reset($links);
+						?>
+						<a href="<?php echo esc_url($first_link); ?>">Read More</a>
+						<?php
+					}
+					?>
+				</article>
 
 			</section>
 
@@ -150,9 +151,11 @@ get_header();
 
 			?>
 			<section class="home-vendor-section">
-				<h2><?php echo $title; ?></h2>
-					
-					<img src="<?php echo esc_url($media['url']); ?>" alt="<?php echo esc_attr($media['alt']); ?>">
+				
+				<img src="<?php echo esc_url($media['url']); ?>" alt="<?php echo esc_attr($media['alt']); ?>">
+				
+				<article class="article-wrapper">
+					<h2><?php echo $title; ?></h2>
 					<p><?php echo $text; ?></p>
 
 					<?php
@@ -164,6 +167,7 @@ get_header();
 					<?php
 				}
 				?>
+				</article>
 			</section>
 
 			<?php
