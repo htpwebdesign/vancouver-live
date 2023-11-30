@@ -12,10 +12,14 @@
     }
 }
 
+#masthead{
+    background-color: white;
+}
+
 .menu-toggle {
     display: flex;
     position: absolute;
-    top: 0;
+    top: -4rem;
     right: 0;
     margin: 1rem;
     
@@ -41,13 +45,20 @@
     align-items: center;
     text-align: left;
     z-index: 100;
-
+    position: relative;
     button{
         
         &:hover{
             color: $color__background-button;
         }
     }
+}
+
+.site-branding::after{
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    height: 5rem;
 }
 
 #primary-menu {
@@ -59,11 +70,8 @@
     justify-content: left;
     align-items: center;
     margin-top: 0;
-    margin-right: 1rem;
-    margin-left: 1rem;
     width: 100%;
-    position: relative;
-    background-color: white;
+    position: absolute;
     z-index: 100;
 
     ul{
@@ -71,6 +79,7 @@
     }
     li{
         border-bottom: solid 1px $color__border-input;
+        background-color: white;
     }
 
     .menu-item-190 {
@@ -277,4 +286,46 @@
             margin: .2rem;
         }
     }
+}
+
+/* Initial styles for the navigation */
+ #primary-menu{
+    // transform: translateY(-100%);
+}
+
+/* Styles for the toggled state */
+#primary-menu.toggled {
+    transform: translateY(0);
+}
+
+/* Opening animation */
+#primary-menu.toggled.slide-in {
+    animation: slideInAnimation 0.5s ease-out;
+}
+
+/* Closing animation */
+#primary-menu.slide-out {
+    animation: slideOutAnimation 0.5s ease-out;
+}
+
+@keyframes slideInAnimation {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOutAnimation {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.menu-header-container .menu.toggled{
+    display: block;
 }

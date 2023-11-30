@@ -32,15 +32,41 @@
 	}
 
 	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
-	button.addEventListener( 'click', function() {
-		siteNavigation.classList.toggle( 'toggled' );
+	jQuery(document).ready(function ($) {
+		var siteNavigation = $('#primary-menu');
+		var menuToggle = $('.menu-toggle');
+	
+		menuToggle.on('click', function () {
+			if(siteNavigation.hasClass('toggled')){
+				setTimeout(() => {
+					siteNavigation.toggleClass('toggled');
+				}, 500);
+			} else{
+				siteNavigation.toggleClass('toggled');
+			}
+			
 
-		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
-			button.setAttribute( 'aria-expanded', 'false' );
-		} else {
-			button.setAttribute( 'aria-expanded', 'true' );
-		}
-	} );
+			
+			if (menuToggle.attr('aria-expanded') === 'true') {
+				menuToggle.attr('aria-expanded', 'false');
+				siteNavigation.addClass('slide-out');
+				setTimeout(function () {
+					// After animation, remove both classes
+					siteNavigation.removeClass('slide-out');
+				}, 500); // Adjust this timeout to match your animation duration
+				
+			} else {
+				menuToggle.attr('aria-expanded', 'true');
+				siteNavigation.addClass('slide-in');
+				setTimeout(() => {
+					siteNavigation.removeClass('slide-in');
+				}, 500);
+			}
+		});
+	
+		
+	});
+	
 
 	// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
 	document.addEventListener( 'click', function( event ) {
