@@ -16,20 +16,13 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-
-    <?php
-    echo '<section class="buttons-sec">';
-	echo '<button class="ticket-button"><a href="' . get_permalink(16) . '" >Tickets</a></button>';
-	echo '<button class="schedule-button"><a href="' . get_permalink(34) . '" >Schedule</a></button>';
-    echo '</section>';
-
-	echo '<section class="banner-content-text">';
-	echo '<p class="sub-header-s">The Land of pioneering events. <br>Where service and expertise is at the heart of it all.</p>';
-	echo '</section>';
-    ?>
-
-
-
+	<section class="buttons-sec">
+		<a href="<?php the_permalink(16) ?>" class="ticket-button">Tickets</a>
+		<a href="<?php the_permalink(34) ?>" class="schedule-button">Schedule</a>
+	</section>
+	<section class="banner-content-text">
+		<p class="sub-header-s">The Land of pioneering events. <br>Where service and expertise is at the heart of it all.</p>
+	</section>
     <?php
     while (have_posts()) :
         the_post();

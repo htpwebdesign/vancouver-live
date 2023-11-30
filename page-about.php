@@ -16,10 +16,8 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
+		<div class="about-page-wrapper">
 		<?php
-
-		echo'<div class="about-page-wrapper">';
 
 		$about_section = get_field('about_hero_section');
 
@@ -32,11 +30,11 @@ get_header();
 				
 				?>
 				<section class="about-section-hero">
-						<h2><?php echo $title; ?></h2>
-						<div class="about-image-banner">
-						<img src="<?php echo esc_url($media['url']); ?>" alt="<?php echo esc_attr($media['alt']); ?>">
-						</div>
-						<p><?php echo $text; ?></p>
+					<h2><?php echo $title; ?></h2>
+					<div class="about-image-banner">
+					<img src="<?php echo esc_url($media['url']); ?>" alt="<?php echo esc_attr($media['alt']); ?>">
+					</div>
+					<p><?php echo $text; ?></p>
 				</section>
 				<?php
 			}
@@ -54,9 +52,9 @@ get_header();
 				
 				?>
 				<section class="History-section">
-						<h2><?php echo $title; ?></h2>
-						<img src="<?php echo esc_url($media['url']); ?>" alt="<?php echo esc_attr($media['alt']); ?>">
-						<p><?php echo $text; ?></p>
+					<h2><?php echo $title; ?></h2>
+					<img src="<?php echo esc_url($media['url']); ?>" alt="<?php echo esc_attr($media['alt']); ?>">
+					<p><?php echo $text; ?></p>
 				</section>
 				<?php
 			}
