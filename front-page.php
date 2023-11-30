@@ -61,7 +61,7 @@ get_header();
 				if (is_array($links) && !empty($links)) {
 					$first_link = reset($links);
 					?>
-					<a href="<?php echo esc_url($first_link); ?>">Read More</a>
+					<a href="<?php echo esc_url($first_link); ?>"><span class="screen-reader-text">Check out our performers!</span>Read More</a>
 					<?php
 				}
 				?>
@@ -90,7 +90,7 @@ get_header();
 				if (is_array($links) && !empty($links)) {
 					$first_link = reset($links);
 					?>
-					<a href="<?php echo esc_url($first_link); ?>">Read More</a>
+					<a href="<?php echo esc_url($first_link); ?>" ><span class="screen-reader-text">Check out our food vendors!</span>Read More</a>
 					<?php
 				}
 				?>

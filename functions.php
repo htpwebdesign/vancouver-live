@@ -241,9 +241,10 @@ function my_login_stylesheet() {
 	wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/style-login.css' );
 }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 // Enqueue Google Fonts
 function enqueue_google_fonts() {
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap', false);
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap', [], null);
 }
 add_action('wp_enqueue_scripts', 'enqueue_google_fonts');
 
