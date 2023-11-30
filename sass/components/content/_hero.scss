@@ -13,6 +13,10 @@
         text-decoration: none;
         padding: 1rem 2rem;
         margin: auto;
+
+        &:hover{
+            background-color: $color__background-screen;
+        }
     }
     
 
