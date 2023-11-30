@@ -14,8 +14,26 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
+			<header class="page-header" id="performer-page">
 				<?php
+
+					$performer_page_id = 36;
+
+					if (have_rows('performers_hero_page', $performer_page_id)) :
+						while (have_rows('performers_hero_page', $performer_page_id)) : the_row();
+							$media = get_sub_field('performers_hero_image'); // Assuming 'performers_hero_image' is the correct image field name
+							?>
+
+							<section class="performer-section-hero">
+								<div class="performer-image-banner">
+									<img src="<?php echo esc_url($media['url']); ?>" alt="<?php echo esc_attr($media['alt']); ?>">
+								</div>
+								<h2><?php the_sub_field('performers_hero_title'); ?></h2>
+								<p><?php the_sub_field('performers_hero_text'); ?></p>
+							</section>
+
+						<?php endwhile;
+					endif;
 
 						
 				$hero_image_url = get_post_thumbnail_id('36');
@@ -106,7 +124,7 @@ get_header();
 				echo '</section>';
 				wp_reset_postdata();
 			}
-				the_posts_navigation();
+				
 
 		else :
 

@@ -12,12 +12,29 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		
 		<?php if ( have_posts() ) : ?>
 
-		<header class="page-header">
+		<header class="page-header" id="vendor-page">
 			<?php
 			
+			$vendor_page_id = 38;
+
+			if (have_rows('vendor_hero_page', $vendor_page_id)) :
+				while (have_rows('vendor_hero_page', $vendor_page_id)) : the_row();
+					$media = get_sub_field('vendor_hero_image');
+					?>
+			
+					<section class="vendor-section-hero">
+						<div class="vendor-image-banner">
+							<img src="<?php echo esc_url($media['url']); ?>" alt="<?php echo esc_attr($media['alt']); ?>">
+						</div>
+						<h2><?php the_sub_field('vendor_hero_title'); ?></h2>
+						<p><?php the_sub_field('vendor_hero_text'); ?></p>
+					</section>
+			
+				<?php endwhile;
+			endif;
+
 			$hero_image_url = get_post_thumbnail_id('38');
 		
 			if($hero_image_url){

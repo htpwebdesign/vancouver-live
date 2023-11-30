@@ -21,6 +21,7 @@ get_header();
         ?>
         </p>
     </div>
+    
 <?php
 $terms = get_terms('vli-day', array('hide_empty' => false));
 
@@ -44,7 +45,7 @@ foreach ($terms as $term) {
     ?>
    <?php 
         echo '<section id="' . str_replace(' ', '-', esc_html($term->name)) . '">';
-        echo '<h2>' . esc_html($term->name) . '</h2>';
+        echo '<h2 class="fixedElement">' . esc_html($term->name) . '</h2>';
 
         // Check if there are posts for the current term
         if ($query->have_posts()) {
@@ -71,16 +72,16 @@ foreach ($terms as $term) {
                 $min_interval = $interval/60;
 
                 $percentageHeight = (($min_interval) / $festival_length) * 100;
-                $percentageHeight = $percentageHeight;
+                $percentageHeight = $percentageHeight * 5;
                 $post_id = get_the_ID();
+
                 ?>
-                <div class="scheduled-performer" style="height: <?php echo $percentageHeight; ?>vh; <?php echo $leftPosition; ?>;">
-                    <div class="performer-background">
-                        <?php echo get_the_post_thumbnail($post_id) ?>
-                    </div>  
+                <div class="scheduled-performer"> 
+                   <div class="performer-background" style="height: <?php echo $percentageHeight; ?>vh; background-image: url('<?php echo get_the_post_thumbnail_url($post_id); ?>');">
                     <div class="performer-content">
                         <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo get_the_title(); ?></a>
                         <span><?php echo esc_html($timeslot_start). ' - ' .esc_html($timeslot_end); ?></span>
+                    </div>
                     </div>
                 </div>
                 <?php
