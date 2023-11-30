@@ -121,6 +121,10 @@ ul.products li.product .button {
   display: flex;
   justify-content: center;
 }
+.woocommerce-product-gallery__image {
+  display: flex;
+  justify-content: center;
+}
 
 .related.products {
   h2 {
@@ -177,27 +181,6 @@ ul.products li.product .button {
     text-align: center;
   }
 }
-
-.woocommerce-message {
-  display: flex;
-  align-items: center;
-  padding: 10px 0;
-  .button {
-    width: 20%;
-    margin-right: 20px;
-  }
-}
-
-.coupon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  input {
-    width: 80%;
-    font-size: 1.5rem;
-  }
-}
-
 
 // .............header.............
 

@@ -1,21 +1,110 @@
-@media screen and (min-width: 768px) {
-
-	.col2-set {
-
-		.form-row-first {
-			float: left;
-			margin-right: $columns__margin;
+.woocommerce-billing-fields {
+	h3 {
+	  text-align: center;
+	}
+	.woocommerce-billing-fields__field-wrapper {
+		& > .form-row {
+			padding: 0 20px;
 		}
-
-		.form-row-last {
-			float: right;
-			margin-right: 0;
+		@include media("765px") {
+			display: grid;
+			grid-template-areas: 
+			"fname lname"
+			"companyname country"
+			"address1 address1"
+			"address2 address2"
+			"town state"
+			"postcode phone"
+			"email email";
+			align-items: end;
 		}
+		@include media("desktop") {
+			grid-template-areas: 
+			"fname lname companyname"
+			"country address1 address2"
+			"town state postcode"
+			"phone email email";
+		}
+		#billing_country_field {
+			margin-bottom: 35px;
+			@include media("desktop") {
+				margin-bottom: 30px;
+			}
+		}
+		#billing_email_field {
+			grid-area: email;
+		}
+	}
+}
 
-		.form-row-first,
-		.form-row-last {
+.woocommerce-additional-fields {
+	h3 {
+		text-align: center;
+	}
+	.woocommerce-additional-fields__field-wrapper {
+		.form-row {
+			padding: 0 20px;
+		}
+	}
+}
+  
+.woocommerce-info {
+	padding: 10px 20px;
+	color: $color__text-white;
+}
+  
+.woocommerce-checkout {
+	#order_review_heading {
+		text-align: center;
+	}
+}
 
-			@include column-width(2);
+#order_review {
+	tbody {
+		text-align: center;
+		
+	}
+	td {
+		text-align: center;
+	}
+}
+
+.wc_payment_methods {
+	margin: 0 1.5em 1.5em 3em;
+}
+
+.woocommerce-privacy-policy-text {
+	p {
+		padding: 0 20px;
+		@include media("765px") {
+			padding: 0 20%;
+		}
+	}
+}
+
+.woocommerce-checkout-payment {
+	.form-row {
+		.button {
+			margin: auto;
+		}
+	}
+}
+
+
+#order_review {
+	.woocommerce-checkout-review-order-table {
+		width: 80%;
+		margin: 0 auto 1.5em;
+		@include media("765px") {
+			width: 400px;
+		}
+		tbody {
+			width: 20%;
+		}
+		.product-name,
+		.cart-subtotal th,
+		.order-total th {
+			text-align: left;
 		}
 	}
 }

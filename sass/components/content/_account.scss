@@ -1,0 +1,26 @@
+.woocommerce {
+    & > h2 {
+        margin-left: 10%;
+        @include media("tablet") {
+            margin-left: 25%;
+        }
+        @include media("desktop") {
+            margin-left: 35%;
+            margin-bottom: 10px;
+        }
+    }
+    .woocommerce-form-login {
+        p {
+            margin: 20px 10%;
+            @include media("tablet") {
+                margin: 20px 25%;
+            }
+            @include media("desktop") {
+                margin: 20px 35%;
+            }
+            .woocommerce-form-login__submit {
+                margin: 10px auto;
+            }
+        }
+    }
+}

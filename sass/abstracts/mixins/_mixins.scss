@@ -17,11 +17,16 @@
         @content;
       }
     }
+	@if $breakpoint == "765px" {
+		@media only screen and (min-width: 765px) {
+		  @content;
+		}
+	}
 	@if $breakpoint == tablet-large {
 		@media only screen and (min-width: 800px) {
 		  @content;
 		}
-	  }
+	}
 
 	@if $breakpoint == desktop {
       @media only screen and (min-width: 1200px) {
