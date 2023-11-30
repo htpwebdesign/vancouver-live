@@ -71,16 +71,16 @@ foreach ($terms as $term) {
                 $min_interval = $interval/60;
 
                 $percentageHeight = (($min_interval) / $festival_length) * 100;
-                $percentageHeight = $percentageHeight;
+                $percentageHeight = $percentageHeight * 2;
                 $post_id = get_the_ID();
+
                 ?>
-                <div class="scheduled-performer" style="height: <?php echo $percentageHeight; ?>vh; <?php echo $leftPosition; ?>;">
-                    <div class="performer-background">
-                        <?php echo get_the_post_thumbnail($post_id) ?>
-                    </div>  
+                <div class="scheduled-performer"> 
+                   <div class="performer-background" style="height: <?php echo $percentageHeight; ?>vh; background-image: url('<?php echo get_the_post_thumbnail_url($post_id); ?>');">
                     <div class="performer-content">
                         <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo get_the_title(); ?></a>
                         <span><?php echo esc_html($timeslot_start). ' - ' .esc_html($timeslot_end); ?></span>
+                    </div>
                     </div>
                 </div>
                 <?php
