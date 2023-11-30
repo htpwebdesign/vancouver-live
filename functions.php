@@ -224,11 +224,13 @@ function enqueue_google_fonts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_google_fonts');
 
+// Add custom excerpt length
 function vli_excerpt_length( $length ) {
 	return 20;
 }
 add_filter( 'excerpt_length', 'vli_excerpt_length', 999 );
 
+// Add custom excerpt more
 function vli_excerpt_more( $more ) {
 	$more = '... <a class="read-more" href="' . esc_url( get_permalink() ) . '">Continue Reading</a>';
 	return $more;
