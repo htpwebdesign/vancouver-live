@@ -12,3 +12,11 @@
 .nav-title {
   display: none;
 }
+
+.blog .site .site-main .post img.wp-post-image,
+.single-post .site .site-main .post img.wp-post-image {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
