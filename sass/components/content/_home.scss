@@ -38,48 +38,52 @@
 
 }
 
-  .entry-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.entry-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .buttons-sec {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    z-index: 22;
-    position: absolute;
-    top: 28rem;
-    width: 100%;
+.buttons-sec {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 22;
+  position: absolute;
+  top: 27rem;
+  right: 2rem;
+
+  
 
 
-    button{
+    button, a.ticket-button, a.schedule-button {
       border: none;
       padding: 1rem 2rem;
       font-size: .9rem;
       border-radius:0;
       font-weight: $title-font-weight;
-
-      a{
-        text-decoration: none;
-        color: $color__background-screen;
-      }
+      text-decoration: none;
+      color: $color__background-screen;
     }
 
-    .schedule-button {
+    a.schedule-button {
       background-color: $color__text-black;
-
-      a{
-        color: $color__background-button;
-      }
+      color: $color__background-button;
     }
 
-    .schedule-button:hover{
+    a.schedule-button:hover{
       background-color: $color__link-hover;
       color: $color__background-screen;
+    }
+
+    a.ticket-button {
+      background-color: $color__background-button;
+    }
+    a.ticket-button:hover {
+      background-color: $color__link-hover;
+      color: $color__background-button;
     }
   }
 
@@ -113,7 +117,7 @@
 
   .home .sub-header-s {
     z-index: 22;
-    width: 20rem;
+    width: 25rem;
     top: 21rem;
     font-size: 1rem;
     margin-left: 0.5rem;
@@ -171,11 +175,12 @@
 
   .home .buttons-sec {
     justify-content: center;
-    top: 21rem;
-    left: 20rem;
+    top: 27rem;
+    right: 10rem;
+    
   }
 
-  .home .buttons-sec button{
+  .home .buttons-sec a{
     padding: 1rem 3rem;
   }
 }

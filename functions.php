@@ -218,9 +218,32 @@ function woocommerce_template_product_description() {
 }
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_product_description', 20 );
 
+function my_login_logo() { ?>
+	<style type="text/css">
+		#login h1 a, .login h1 a {
+			background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/icons/logo-fav.png);
+			height:140px;
+			width:140px;
+			background-size: 140px 140px;
+			background-repeat: no-repeat;
+			padding-bottom: 30px;
+		}
+	</style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+function my_login_logo_url() {
+	return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_stylesheet() {
+	wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/style-login.css' );
+}
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 // Enqueue Google Fonts
 function enqueue_google_fonts() {
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap', false);
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap', false);
 }
 add_action('wp_enqueue_scripts', 'enqueue_google_fonts');
 

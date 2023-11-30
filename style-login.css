@@ -1,0 +1,48 @@
+
+
+#loginform {
+    border-radius: 20px;
+}
+
+#loginform label{
+    color: #002C40;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+}
+
+
+#loginform #wp-submit {
+    background-color: #84CDE4;
+    color: #002C40;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+#loginform #wp-submit:hover {
+    background-color: #86868c;
+    color: #ffffff;
+}
+
+.login-action-login {
+    background-color: #002C40;
+}
+
+
+#login > h1 > a {
+    position: relative;
+
+}
+
+
+
+#login > h1 > a::before {
+    content: '';
+	display: block;
+    width: 140px;
+    height: 140px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: white;
+	border-radius: 50%;
+    z-index: -1
+}
