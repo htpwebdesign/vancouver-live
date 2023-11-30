@@ -223,11 +223,10 @@ p.stars {
 .woocommerce-error,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: $woocommerce__color-success;
+	background-color: $color__background-screen;
 	clear: both;
 }
 
-.woocommerce-info,
 .woocommerce-noreviews,
 p.no-comments {
 	background-color: $woocommerce__color-info;
@@ -274,4 +273,8 @@ p.no-comments {
 			}
 		}
 	}
+}
+
+.showcoupon {
+	color: $color__text-title;
 }
