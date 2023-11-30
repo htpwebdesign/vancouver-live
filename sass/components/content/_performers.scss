@@ -115,14 +115,14 @@
                 margin: auto;
 
                 img {
-                    object-fit: contain;
-                    object-position: center;
+                    object-fit: cover;
+                    object-position: top;
                     height: auto;
-                    width: fit-content;
                     max-width: 100%;
                     max-height: 50vh;
                     @include media(desktop) {
                         max-height: 40vh;
+                        width: 50vw;
                     }
                 }
             }
@@ -133,7 +133,8 @@
             -webkit-line-clamp: 9;
             display: -webkit-box;
             overflow: hidden;
-           
+            max-width: 60ch;
+             margin: auto;
             p {
                 margin: 0;
             }
@@ -178,6 +179,9 @@
                 max-width: 100%;
                 width: fit-content;
                 margin: auto;
+                aspect-ratio: 3/2;
+                object-position: top;
+                object-fit: cover;
             }
         }
     }
