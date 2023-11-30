@@ -307,6 +307,12 @@
     transform: translateY(-150%);
     display: block;
     opacity: 0;
+
+    @media(min-width:700px) {
+        transform: none;
+        display: flex;
+        opacity: 1;
+    }
 }
 
 /* Styles for the toggled state */
