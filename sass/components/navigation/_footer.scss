@@ -54,6 +54,10 @@
 .site-social-media {
     background-color: $color__background-screen;
     position: relative;
+    padding-bottom: 20px;
+    @include media("desktop") {
+        padding-bottom: 40px;
+    }
     .subscribe-newsletter {
         width: fit-content;
         margin: auto;
@@ -82,6 +86,9 @@
             position: absolute;
             right: 20px;
             top: 30px;
+        }
+        @include media("desktop-large") {
+            right: 60px;
         }
         h2 {
             color: $color__text-white;
