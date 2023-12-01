@@ -227,6 +227,13 @@ p.no-comments {
 	clear: both;
 }
 
+.woocommerce-info > .button {
+	display: inline;
+	font-size: 1.1rem;
+	padding: 5px;
+	margin: 10px 0;
+}
+
 .woocommerce-noreviews,
 p.no-comments {
 	background-color: $woocommerce__color-info;

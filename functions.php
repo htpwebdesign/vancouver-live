@@ -271,29 +271,34 @@ function remove_welcome_panel()
 add_action('wp_dashboard_setup', 'my_custom_dashboard_widget');
 function my_custom_dashboard_widget() {
 	global $wp_meta_boxes;
-	wp_add_dashboard_widget('tutorial_1', 'tutorial_1', 'custom_dashboard_fun');
-	wp_add_dashboard_widget('tutorial_2', 'tutorial_2', 'custom_dashboard_bun');
+	wp_add_dashboard_widget('tutorial_1', 'How to add tickets/products', 'custom_dashboard_tutorial_product');
+	wp_add_dashboard_widget('tutorial_2', 'How to add new vendors/performers', 'custom_dashboard_tutorial_performer_vendor');
+	wp_add_dashboard_widget('tutorial_3', 'How to customize vendor tier names and descriptions', 'custom_dashboard_tutorial_customize_vendor');
 }
 
-function custom_dashboard_fun() { ?>
+function custom_dashboard_tutorial_product() { ?>
 	<video width="800" controls>
-		<source src="<?php echo get_stylesheet_directory_uri(); ?>/tutorials/pexels-matthias-groeneveld-18209579 (2160p).mp4" type="video/mp4">
+		<source src="<?php echo get_stylesheet_directory_uri(); ?>/tutorials/Adding_a_product.mp4" type="video/mp4">
   		Your browser does not support the video tag.
   	</video>;<?php
 }
 
-function custom_dashboard_bun() { ?>
+function custom_dashboard_tutorial_performer_vendor() { ?>
 	<video width="800" controls>
-		<source src="<?php echo get_stylesheet_directory_uri(); ?>/tutorials/pexels-matthias-groeneveld-18209579 (2160p).mp4" type="video/mp4">
+		<source src="<?php echo get_stylesheet_directory_uri(); ?>/tutorials/Adding_performers_and_vendors.mp4" type="video/mp4">
+  		Your browser does not support the video tag.
+  	</video>;<?php
+}
+
+function custom_dashboard_tutorial_customize_vendor() { ?>
+	<video width="800" controls>
+		<source src="<?php echo get_stylesheet_directory_uri(); ?>/tutorials/Customising_tier_names_and_descriptions.mp4" type="video/mp4">
   		Your browser does not support the video tag.
   	</video>;<?php
 }
 
 function my_add_custom_dashboard_styles() {
     wp_add_inline_style('wp-admin', '
-        #custom_fun_widget {
-            width: 80%;
-        }
 		#dashboard-widgets-wrap {
 			display:flex;
 			flex-direction: column;
@@ -312,6 +317,9 @@ function my_add_custom_dashboard_styles() {
 		}
 		.inside {
 			text-align: center;
+		}
+		#dashboard-widgets-wrap > #dashboard-widgets .empty-container {
+			display: none;
 		}
     ');
 }

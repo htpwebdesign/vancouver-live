@@ -79,7 +79,7 @@
 			<section class="site-copyright">
 				<p><a href="<?php echo get_privacy_policy_url(); ?>">Privacy Policy</a> | <a href="<?php echo get_permalink( wc_terms_and_conditions_page_id() ); ?>">Terms and Conditions</a> | <a href="mailto:vanlive@gmail.com">Contact Us</a></p>
 				<p class="copyright">&copy;2023 Vancouver Live</p>
-				<p>Built by <a href="https://www.linkedin.com/in/taylorchillier/">Taylor Hillier</a>, <a href="https://www.linkedin.com/in/zeinabkordeh/">Zeinab Kordeh</a>, <a href="https://www.linkedin.com/in/justinyu1128/">Justin Yu</a>, and <a href="https://www.linkedin.com/in/brucegerona/">Bruce Gerona</a></p>
+				<p>Built by <a href="https://taylorhillier.com">Taylor Hillier</a>, <a href="https://www.linkedin.com/in/zeinabkordeh/">Zeinab Kordeh</a>, <a href="https://justiny.ca/">Justin Yu</a>, and <a href="https://www.linkedin.com/in/brucegerona/">Bruce Gerona</a></p>
 			</section>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
