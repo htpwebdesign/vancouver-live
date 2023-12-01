@@ -242,6 +242,80 @@ function my_login_stylesheet() {
 }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+add_action('wp_dashboard_setup', 'wpdocs_remove_dashboard_widgets');
+
+function wpdocs_remove_dashboard_widgets(){
+   remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+   remove_meta_box('dashboard_primary', 'dashboard', 'side');
+   remove_meta_box('wc_admin_dashboard_setup', 'dashboard', 'normal');
+   remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
+   remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
+   remove_meta_box('dashboard_activity', 'dashboard', 'normal');
+   remove_meta_box('rg_forms_dashboard', 'dashboard', 'normal');
+   remove_meta_box('wpseo-dashboard-overview', 'dashboard', 'normal');
+   remove_meta_box('wpseo-wincher-dashboard-overview', 'dashboard', 'normal');
+}
+
+add_action( 'load-index.php', 'remove_welcome_panel' );
+
+function remove_welcome_panel()
+{
+    remove_action('welcome_panel', 'wp_welcome_panel');
+    $user_id = get_current_user_id();
+    if (0 !== get_user_meta( $user_id, 'show_welcome_panel', true ) ) {
+        update_user_meta( $user_id, 'show_welcome_panel', 0 );
+    }
+}
+
+add_action('wp_dashboard_setup', 'my_custom_dashboard_widget');
+function my_custom_dashboard_widget() {
+	global $wp_meta_boxes;
+	wp_add_dashboard_widget('tutorial_1', 'tutorial_1', 'custom_dashboard_fun');
+	wp_add_dashboard_widget('tutorial_2', 'tutorial_2', 'custom_dashboard_bun');
+}
+
+function custom_dashboard_fun() { ?>
+	<video width="800" controls>
+		<source src="<?php echo get_stylesheet_directory_uri(); ?>/tutorials/pexels-matthias-groeneveld-18209579 (2160p).mp4" type="video/mp4">
+  		Your browser does not support the video tag.
+  	</video>;<?php
+}
+
+function custom_dashboard_bun() { ?>
+	<video width="800" controls>
+		<source src="<?php echo get_stylesheet_directory_uri(); ?>/tutorials/pexels-matthias-groeneveld-18209579 (2160p).mp4" type="video/mp4">
+  		Your browser does not support the video tag.
+  	</video>;<?php
+}
+
+function my_add_custom_dashboard_styles() {
+    wp_add_inline_style('wp-admin', '
+        #custom_fun_widget {
+            width: 80%;
+        }
+		#dashboard-widgets-wrap {
+			display:flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		@media only screen and (min-width: 800px) and (max-width: 1499px) {
+			#wpbody-content #dashboard-widgets .postbox-container {
+    			width:auto
+			}
+		}
+		#dashboard-widgets .postbox-container {
+			width:auto;
+		}
+		.postbox-container {
+			float: none;
+		}
+		.inside {
+			text-align: center;
+		}
+    ');
+}
+add_action('admin_enqueue_scripts', 'my_add_custom_dashboard_styles');
 // Enqueue Google Fonts
 function enqueue_google_fonts() {
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap', [], null);
