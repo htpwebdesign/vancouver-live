@@ -48,14 +48,13 @@
                     
                         $tier = get_field('vendor_tier');
                    
-                        if($tier === 'Tier 1' || $tier === 'Tier 2'){
+                      
         
                             $vendorDesc = get_field('vendor_description');
-        
                             if($vendorDesc){
                                 echo '<p>'. $vendorDesc . '</p>'; 
                             }
-                        }
+                        
                     
                         $to_sched = get_field('link_to_schedule', 34);
                               
