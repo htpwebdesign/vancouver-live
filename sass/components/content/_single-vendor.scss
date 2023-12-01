@@ -54,6 +54,11 @@
         padding: 1rem;
         color: white;
         margin: auto;
+
+        &:hover{
+            background-color: $color__background-screen;
+            
+        }
     }
 
     .navigation {
