@@ -16,23 +16,22 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-	<section class="buttons-sec">
-		<a href="<?php the_permalink(16) ?>" class="ticket-button">Tickets</a>
-		<a href="<?php the_permalink(34) ?>" class="schedule-button">Schedule</a>
-	</section>
-	<section class="banner-content-text">
-		<p class="sub-header-s">The Land of pioneering events. <br>Where service and expertise is at the heart of it all.</p>
-	</section>
     <?php
     while (have_posts()) :
+		echo "<section class='intro'>";
         the_post();
+		?>
+			<div class="buttons-sec">
+				<a href="<?php the_permalink(16) ?>" class="ticket-button">Tickets</a>
+				<a href="<?php the_permalink(34) ?>" class="schedule-button">Schedule</a>
+			</div>
+			<div class="banner-content-text">
+				<p class="sub-header-s">The Land of pioneering events. <br>Where service and expertise is at the heart of it all.</p>
+			</div>
+		<?php
 
         get_template_part('template-parts/content', 'page');
-
-        // If comments are open or we have at least one comment, load up the comment template.
-        if (comments_open() || get_comments_number()) :
-            comments_template();
-        endif;
+		echo "</section>";
 
     endwhile; // End of the loop.
 

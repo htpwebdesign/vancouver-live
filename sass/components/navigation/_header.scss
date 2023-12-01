@@ -169,12 +169,12 @@
         width: 10rem;
         padding: 0;
         margin-left: 1rem;
-        margin-top: 1.5rem;
+        margin-top: 1rem;
 
     }
 
     #masthead {
-        height: 7vh;
+        height: 5rem;
         display: flex;
         align-items: center;
         font-size: 1rem;
@@ -240,7 +240,7 @@
     }
 
     #masthead {
-        height: 10vh;
+        height: 6rem;
         display: flex;
         align-items: center;
         font-size: 1.2rem;
@@ -272,6 +272,7 @@
         align-items: center;
         position: relative;
         top: 0;
+        margin-right: 4rem;
 
         li{
             border: none;
