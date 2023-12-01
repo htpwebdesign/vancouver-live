@@ -28,6 +28,8 @@
         .section-desc {
             background-color: white;
             padding: 1rem;
+            padding-bottom: 8rem;
+            min-height: 20vh;
 
             p {
                 color: $color__background-screen;
@@ -41,7 +43,9 @@
         .section-header {
             background-color: white;
             display: flex;
-
+            min-height: 20vh;
+            padding-top:8rem;
+            margin-top: 5rem;
             h2 {
                 color: $color__text-title;
                 width: 100%;
@@ -276,15 +280,11 @@
     margin-top: 1rem;
 }
 
-#performer-page{
-    margin-top: 2rem;
-}
-
 .performer-section-hero h2{
 
     position: absolute;
     color: $color__text-title ;
-    z-index: 9999;
+    z-index: 50;
     font-weight: $title-font-weight;
     line-height: 2.5rem;
     font-size: 2.5rem;

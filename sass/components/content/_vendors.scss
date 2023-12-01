@@ -29,6 +29,9 @@
         .section-header{
             background-color: white;
             display: flex;
+            min-height: 20vh;
+            padding-top:8rem;
+            margin-top: 5rem;
         
             h2 {
                 color: $color__text-title;
@@ -43,6 +46,8 @@
         .section-desc{
             background-color: white;
             padding: 1rem;
+            padding-bottom: 8rem;
+            min-height: 20vh;
             p{
                 margin: auto;
                 color: $color__background-screen;
@@ -159,9 +164,10 @@
                 margin: auto;
              
                 img{
-                    object-fit: contain;
+                    object-fit: cover;
                     object-position: center;
                     max-height: 50vh;
+                    aspect-ratio: 1/1;
 
                     @include media("tablet-large"){
                         max-height: 33.33vh;
@@ -213,8 +219,9 @@
                     height: auto;
                     width: 100%;
                     max-width: 100%;
-                    object-fit: contain;
+                    object-fit: cover;
                     object-position: center;
+                    aspect-ratio: 1/1;
                 }
             }
         }
@@ -266,10 +273,19 @@
 
     .tier-4{
 
+        .article-container{
+            display: flex;
+            justify-content: center;
+            background-color: white;
+        }
         article{
             display: flex;
             justify-content: space-around;
             padding: 1rem;
+
+            a:hover{
+                color: $color__background-screen;
+            }
 
             .entry-content{
                 display: none;
@@ -352,15 +368,11 @@
     margin-top: 1rem;
 }
 
-#vendor-page{
-    margin-top: 2rem;
-}
-
 .vendor-section-hero h2{
 
     position: absolute;
     color: $color__text-title ;
-    z-index: 9999;
+    z-index: 50;
     font-weight: $title-font-weight;
     line-height: 2.5rem;
     font-size: 2.5rem;
