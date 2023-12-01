@@ -21,6 +21,7 @@ get_header();
 		echo "<section class='intro'>";
         the_post();
 		?>
+		<div class="hero-button-text">
 			<div class="buttons-sec">
 				<a href="<?php the_permalink(16) ?>" class="ticket-button">Tickets</a>
 				<a href="<?php the_permalink(34) ?>" class="schedule-button">Schedule</a>
@@ -28,6 +29,7 @@ get_header();
 			<div class="banner-content-text">
 				<p class="sub-header-s">The Land of pioneering events. <br>Where service and expertise is at the heart of it all.</p>
 			</div>
+		</div>
 		<?php
 
         get_template_part('template-parts/content', 'page');
