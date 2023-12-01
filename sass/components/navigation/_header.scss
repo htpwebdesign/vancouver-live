@@ -96,6 +96,10 @@
                 padding-right: .5rem;
             } 
 
+            @media(min-width:1000px) {
+                padding: 0.5rem;
+            }
+
             &:hover{
                 background-color: $color__background-screen;
                 color: white;
@@ -300,12 +304,21 @@
 
 /* Initial styles for the navigation */
  #primary-menu{
-    // transform: translateY(-100%);
+    transform: translateY(-150%);
+    display: block;
+    opacity: 0;
+
+    @media(min-width:700px) {
+        transform: none;
+        display: flex;
+        opacity: 1;
+    }
 }
 
 /* Styles for the toggled state */
 #primary-menu.toggled {
     transform: translateY(0);
+    opacity: 1;
 }
 
 /* Opening animation */
