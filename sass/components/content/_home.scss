@@ -113,20 +113,20 @@
     justify-content: center;
   }
 
-  }
+  
 
   @media  (min-width: 600px) and (max-width: 1000px){
 
-  .home .entry-header {
+  .entry-header {
     justify-content: left;
   }
 
-  .home .banner-content-text {
+  .banner-content-text {
     justify-content: left;
     margin-left: 5rem;
   }
 
-  .home .sub-header-s {
+   .sub-header-s {
     z-index: 22;
     width: 25rem;
     font-size: 1rem;
@@ -140,13 +140,14 @@
     font-weight: $title-font-weight;
     line-height: 2.5rem;
     margin-left: 5rem;
-    width: auto;
+    width:auto;
   }
 
-  .home .buttons-sec{
+  .buttons-sec{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    margin-left: 5rem;
   }
 
   
@@ -154,43 +155,51 @@
 
 @media  (min-width: 1001px) {
 
-  .home .entry-header{
+ .entry-header{
     display: flex;
     justify-content: left;
   }
 
-  .home .entry-title {
-    display: flex;
+  .entry-title {
     color: $color__text-title ;
-    font-size: 4rem;
-    margin-top: 7rem;
-    z-index: 9999;
-    margin-left: 9rem;
+    font-size: 3rem;
+    z-index: 20;
     font-weight: $title-font-weight;
-    line-height: 4.5rem;
-    width: 38rem;
+    line-height: 2.5rem;
+    margin-left: 20rem;
+    width:auto;
   }
 
-  .home .banner-content-text .sub-header-s {
+  .sub-header-s {
     z-index: 22;
-    width: 28rem;
-    font-size: 1.1rem;
-    top: 22rem;
-    left: 9rem;
+    width: 25rem;
+    font-size: 1rem;
+    margin: 0;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
-  .home .buttons-sec {
-    justify-content: center;
-    top: 27rem;
-    right: 10rem;
-    
+  .buttons-sec{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 5rem;
   }
 
-  .home .buttons-sec a{
+  .intro div:not(.entry-content){
+    margin-left: 10rem;
+  }
+
+  .banner-content-text{
+    justify-content: flex-start;
+  }
+
+
+.buttons-sec a{
     padding: 1rem 3rem;
   }
 }
-
+}
 // .........Event Section.......
 
 .events-home {
