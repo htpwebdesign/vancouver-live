@@ -19,26 +19,14 @@ defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
 
-
-$shop_page_id = wc_get_page_id('shop');
-
-if( have_rows('ticket_hero_section', $shop_page_id) ):
-    while( have_rows('ticket_hero_section', $shop_page_id) ): the_row(); 
-	$image = get_sub_field('ticket_hero_image');?>
-    <img src="<?php echo $image['url'];?>" />
-	<p><?php the_sub_field('ticket_hero_title'); ?></p>
-
-	<?php endwhile;
-endif; 
-
 $shop_page_id = wc_get_page_id('shop');
 
 if( have_rows('ticket_hero_section', $shop_page_id) ):
 	while( have_rows('ticket_hero_section', $shop_page_id) ): the_row();
 	$image = get_sub_field('ticket_hero_image');?>
-	<section class=“ticket-header-wrapper”>
-		<div class=“ticket-hero-img”>
-			<img src=“<?php echo $image['url'];?>” />
+	<section class="ticket-header-wrapper">
+		<div class="ticket-hero-img">
+			<img src=<?php echo $image['url'];?> />
 		</div>
 		<h2><?php the_sub_field('ticket_hero_title'); ?></h2>
 		<p><?php the_sub_field('ticket_hero_text'); ?></p>
