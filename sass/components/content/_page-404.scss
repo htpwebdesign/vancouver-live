@@ -1,0 +1,68 @@
+.error-404 {
+    .page-header {
+        height: auto;
+        h1.page-title {
+            text-align: center;
+            margin: 30px auto 0;
+            border-radius: 15px;
+            width: 80%;
+            font-size: 1.6rem;
+            box-shadow: 5px 15px 40px $color__text-title inset;
+            color: $color__background-screen;
+            padding: 5px 10px;
+            @include media("tablet") {
+                width: fit-content;
+                font-size: 2rem;
+            }
+        }
+    }
+    
+    .page-content {
+        p {
+            margin: 50px 10% 60px;
+            text-align: center;
+            @include media("tablet") {
+                margin: 60px 20%;
+            }
+            @include media("desktop") {
+                font-size: 1.3rem;
+            }
+        }
+        .search-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 50px;
+            @include media("tablet") {
+                flex-direction: row;
+                justify-content: center;
+            }
+            label {
+                width: 80%;
+                @include media("tablet") {
+                    width: auto;
+                }
+            }
+            .search-field {
+                @include media("tablet") {
+                    width: 400px;
+                }
+                @include media("desktop") {
+                    width: 800px;
+                    font-size: 1.5rem;
+                }
+            }
+            .search-submit {
+                width: 80%;
+                @include media("tablet") {
+                    width: auto;
+                }
+                @include media("desktop") {
+                    font-size: 1.2rem;
+                    padding: 0.7rem 1rem;
+                }
+                
+            }
+        }
+    }
+}

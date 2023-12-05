@@ -55,7 +55,9 @@ foreach ($terms as $term) {
             // Loop through the posts for the current term
             while ($query->have_posts()) : $query->the_post();
                 // Get performer details
-                $timeslot = get_field('timeslot');
+                if(function_exists('get_field')){
+                    $timeslot = get_field('timeslot');
+                }
                 $festival_length = 540;
 
                 // Extract start and end times from the timeslot

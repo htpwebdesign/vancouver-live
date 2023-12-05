@@ -84,8 +84,6 @@ function vancouver_live_setup() {
 		)
 	);
 
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	/**
 	 * Add support for core custom logo.
@@ -115,28 +113,6 @@ function vancouver_live_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'vancouver_live_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'vancouver_live_content_width', 0 );
-
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-// function vancouver_live_widgets_init() {
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__( 'Sidebar', 'vancouver-live' ),
-// 			'id'            => 'sidebar-1',
-// 			'description'   => esc_html__( 'Add widgets here.', 'vancouver-live' ),
-// 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-// 			'after_widget'  => '</section>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-// }
-// add_action( 'widgets_init', 'vancouver_live_widgets_init' );
-
 /**
  * Enqueue scripts and styles.
  */
@@ -242,7 +218,7 @@ function my_login_stylesheet() {
 }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 add_action('wp_dashboard_setup', 'wpdocs_remove_dashboard_widgets');
 
 function wpdocs_remove_dashboard_widgets(){
@@ -324,6 +300,10 @@ function my_add_custom_dashboard_styles() {
     ');
 }
 add_action('admin_enqueue_scripts', 'my_add_custom_dashboard_styles');
+function yoast_to_bottom(){
+	return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
 // Enqueue Google Fonts
 function enqueue_google_fonts() {
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap', [], null);

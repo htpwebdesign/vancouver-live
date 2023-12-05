@@ -23,6 +23,7 @@ ul.products li.product .button {
     color: $color__background-screen;
     border: none;
     font-size: 1.2rem;
+    margin-top: 20px;
 }
 
 .woocommerce-result-count {
@@ -160,7 +161,7 @@ ul.products li.product .button {
       width: 48%;
     }
     .single_add_to_cart_button {
-      margin: auto;
+      margin: 0 auto 40px;
     }
   }
 }
